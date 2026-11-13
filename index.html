@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf9f6">
+  <title>拾程 · 秋招工作台｜作品演示</title>
+  <meta name="description" content="一个连接岗位筛选、流程追踪、笔面试复盘和改进行动的个人求职工作台。无需登录，使用虚构示例体验完整流程。">
+  <style>
+
+:root{--paper:#faf9f6;--white:#fff;--ink:#272d29;--muted:#7c817b;--line:#e9e9e2;--accent:#c45b35;--accent-dark:#a44927;--soft:#f7ebe4;--green:#53735c;--green-soft:#ecf2ec;--blue:#486a8c;--blue-soft:#edf2f7;--red:#a75b5b;--red-soft:#f7eded;--gold:#987324;--gold-soft:#f8f2e2;--radius:14px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.6}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:inherit;text-decoration:none}button{color:inherit}button:focus-visible,a:focus-visible{outline:3px solid #a4bca8;outline-offset:3px}input:focus,select:focus,textarea:focus{outline:2px solid #c9d5c7;outline-offset:1px}button svg,span[data-icon] svg{width:19px;height:19px;display:block;flex-shrink:0}h1,h2,h3,h4,p{margin:0}button{border:0}button:not(.primary):hover{filter:brightness(.975)}[hidden]{display:none!important}.skip-link{position:fixed;left:20px;top:-100px;padding:10px;background:white;z-index:20}.skip-link:focus{top:10px}.sidebar{width:230px;position:fixed;inset:0 auto 0 0;background:#f2f3ee;border-right:1px solid var(--line);padding:33px 20px 20px;display:flex;flex-direction:column;z-index:3}.brand{display:flex;align-items:center;gap:11px;font-size:24px;font-weight:650;letter-spacing:2px;padding-left:8px}.brand-symbol{display:grid;place-items:center;width:42px;height:46px;transform:rotate(-5deg);border-radius:13px;background:var(--green);color:#fff;font-size:25px;font-family:serif}.brand small{display:block;font-size:8px;letter-spacing:1.5px;font-weight:500;color:var(--muted);margin-top:0}.nav-label{font-size:11px;color:#8e958d;letter-spacing:1.5px;margin:48px 12px 14px}.nav-item{display:flex;align-items:center;gap:11px;width:100%;padding:12px;border-radius:9px;background:transparent;text-align:left;color:#777e75;margin-bottom:6px;font-size:13px}.nav-item.active{background:#e3e9df;color:#3e5e45;font-weight:600}.nav-count{margin-left:auto;font-size:11px;line-height:21px;min-width:21px;text-align:center;background:rgba(255,255,255,.7);border-radius:5px;font-weight:500}.sidebar-note{margin:44px 12px 25px;color:#6b7b65}.little-star{font-size:38px;display:block;line-height:1}.sidebar-note p{font-size:17px;font-family:Georgia,"Songti SC",serif;line-height:1.9;letter-spacing:1px;margin:12px 0}.sidebar-note>span:last-child{font-size:8px;letter-spacing:1px;color:#a1a89a}.sidebar-bottom{margin-top:auto}.sidebar-bottom .nav-item{padding:9px 12px;font-size:12px}.sidebar-bottom svg{width:16px;height:16px}.local-state{font-size:10px;color:#91968d;display:flex;align-items:center;gap:7px;margin:19px 12px 0}.local-state>span:first-child{height:5px;width:5px;background:#8aa07d;border-radius:50%}.workspace{margin-left:230px}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 45px;border-bottom:1px solid var(--line);font-size:12px;background:rgba(255,255,255,.34)}.breadcrumb{color:var(--muted)}.slash{color:#b8bcb3;margin:0 15px}.topbar-right{display:flex;align-items:center;gap:22px}.season{color:var(--muted);font-size:11px}.avatar{display:grid;place-items:center;background:#e5e9de;color:var(--green);width:32px;height:32px;border-radius:50%;font-size:12px}main{padding:39px 45px 0;max-width:1550px;margin:auto;outline:none}.page-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.eyebrow{font-size:10px;letter-spacing:1.9px;color:var(--muted);font-weight:500}h1{font-size:30px;letter-spacing:1px;font-weight:600;line-height:1.5;margin-top:10px}h1>span{color:var(--accent)}.page-heading p{font-size:12px;color:var(--muted);margin-top:8px}.button{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:white;border:1px solid var(--line);border-radius:8px;padding:9px 15px;font-size:12px;line-height:1.5;white-space:nowrap;min-height:38px}.button.primary{background:var(--accent);border-color:var(--accent);color:white}.button.primary:hover{background:var(--accent-dark)}.button svg{width:16px;height:16px}.button.subtle{background:#f4f5f0;border-color:transparent;color:#5c7059}.button.danger{color:var(--red)}.text-button{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--accent);padding:4px;font-size:12px;white-space:nowrap}.text-button svg{height:15px;width:15px}.icon-button{width:32px;height:32px;border-radius:7px;display:inline-grid;place-items:center;background:transparent;flex-shrink:0;color:var(--muted)}.icon-button:hover{background:#f1f2ec}.icon-button.saved{color:var(--accent);background:var(--soft)}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:29px 0 23px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:20px 0}.stat{display:flex;align-items:center;gap:16px;padding:0 25px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat-icon{height:40px;width:40px;border-radius:11px;background:#f0f3ed;color:var(--green);display:grid;place-items:center}.stat:nth-child(2) .stat-icon{background:#f9f0e7;color:#b27a44}.stat:nth-child(3) .stat-icon{background:#eef1f6;color:#77889f}.stat-value{font-size:26px;line-height:1.15;font-weight:550;font-variant-numeric:tabular-nums}.stat-value small{font-weight:400;font-size:11px;color:var(--muted);margin-left:9px}.stat-caption{color:var(--muted);font-size:11px;margin-top:4px}.notice{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 15px;border-radius:8px;font-size:11px;background:#efF2eb;color:#63715d;margin:0 0 24px}.notice>div{display:flex;align-items:center;gap:9px}.notice svg{width:16px;height:16px;flex-shrink:0}.notice .text-button{font-size:11px;color:#63715d}.notice.warning{background:#fff1d7;color:#8b682c}.filters{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:21px 23px}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.section-heading h2{font-size:14px;font-weight:550;display:flex;align-items:center;gap:8px}.section-heading h2 svg{width:16px;height:16px;color:var(--muted)}.section-heading .text-button{font-size:11px;color:var(--muted)}.filter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 15px}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field>span,.field>label,.field-label{font-size:11px;color:#71786e}.field input,.field select,.field textarea,.input{width:100%;padding:9px 10px;border:1px solid #e5e7df;border-radius:7px;background:white;color:var(--ink);font-size:12px;min-width:0}.field textarea{resize:vertical;min-height:100px;line-height:1.8}.field input::placeholder,.field textarea::placeholder{color:#a1a59e}.field .help,.help{font-size:11px;line-height:1.6;color:#8a9185;font-weight:400}.search-field{grid-column:span 2}.search-control{position:relative}.search-control svg{position:absolute;left:11px;top:11px;width:15px;height:15px;color:#9a9f94}.search-control input{padding-left:34px}.salary-controls{display:grid;grid-template-columns:1fr 65px;gap:5px}.salary-controls select{padding:9px 3px}.filter-note{display:flex;gap:9px;align-items:center;margin-top:15px;font-size:11px;color:var(--muted)}.check{display:inline-flex;align-items:center;gap:7px;font-size:12px;cursor:pointer;color:#71786d}.check input{accent-color:var(--green);width:14px;height:14px}.results-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 17px}.view-tabs{display:flex;gap:21px;align-items:center}.view-tab{padding:6px 0;background:transparent;color:var(--muted);font-size:12px;border-bottom:2px solid transparent;white-space:nowrap}.view-tab.active{color:var(--ink);border-color:var(--accent);font-weight:550}.view-tab small{font-size:10px;margin-left:5px;color:var(--muted)}.sort-control{border:0;background:transparent;color:var(--muted);font-size:11px;padding:6px;max-width:170px}.job-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.job-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:21px 22px;transition:border-color .18s,transform .18s;min-width:0}.job-card:hover{border-color:#cdd4c6;transform:translateY(-2px)}.company-row{display:flex;align-items:center;gap:11px;margin-bottom:17px}.company-logo{width:39px;height:39px;display:grid;place-items:center;border-radius:10px;font-size:15px;font-weight:600;background:#eef2ec;color:var(--green);flex-shrink:0;letter-spacing:-.3px}.logo-orange{background:#f9eee2;color:#bf8047}.logo-blue{background:#edf2f8;color:#5675a1}.logo-purple{background:#f2eef8;color:#8d74a8}.company-meta{min-width:0}.company-name{font-size:12px;font-weight:550}.company-hq{font-size:10px;color:var(--muted);margin-top:2px}.company-row>.icon-button{margin-left:auto}.job-title{display:block;text-align:left;background:transparent;padding:0;font-size:17px;font-weight:550;line-height:1.6;overflow-wrap:anywhere}.job-title:hover{color:var(--accent)}.job-subline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-top:7px}.job-subline .salary{color:var(--accent);font-weight:550;font-size:13px;margin-left:auto}.divider{color:#d4d7cd}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0 20px}.tag,.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:5px;background:#f4f5f0;font-size:10px;color:#7a8173;line-height:1.5}.tag.demo{background:#f7f1e8;color:#9d835e}.badge.green{color:var(--green);background:var(--green-soft)}.badge.blue{color:var(--blue);background:var(--blue-soft)}.badge.red{color:var(--red);background:var(--red-soft)}.badge.gold{color:var(--gold);background:var(--gold-soft)}.badge.gray{color:var(--muted);background:#f0f1ed}.job-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0f0ea;padding-top:13px;gap:10px}.source{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:6px}.source-dot{width:5px;height:5px;border-radius:50%;background:#a5b298}.job-footer .text-button{font-size:11px;color:#5b6e53}.empty{border:1px dashed #d9ded2;border-radius:14px;padding:48px 20px;text-align:center;background:#fff9}.empty-symbol{font-size:30px;color:#99a58f;line-height:1.2;margin-bottom:15px}.empty h3{font-size:15px;font-weight:500}.empty p{font-size:12px;color:var(--muted);margin:8px 0 18px}.page-footer{display:flex;justify-content:space-between;gap:10px;padding:28px 0 22px;color:#a2a69c;font-size:10px}.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}.toolbar>.search-control{flex:1;min-width:170px}.toolbar input{padding-left:34px}.toolbar select{width:auto;max-width:160px}.flow-strip{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px}.flow-pill{display:flex;gap:9px;padding:7px 12px;border-radius:7px;border:1px solid var(--line);font-size:11px;background:#fff;color:var(--muted)}.flow-pill.active{border-color:#cbd5c4;background:#edf2e9;color:var(--green)}.flow-pill b{font-weight:550}.table-wrap{border:1px solid var(--line);background:white;border-radius:var(--radius);overflow:auto}.record-table{width:100%;border-collapse:collapse;text-align:left;min-width:680px}.record-table th{font-size:10px;letter-spacing:.6px;font-weight:500;color:#8b9285;background:#fafbf7;padding:14px 19px;white-space:nowrap}.record-table td{border-top:1px solid #efefe8;padding:20px 19px;font-size:12px;vertical-align:middle}.record-company{display:flex;align-items:center;gap:10px}.record-company .company-logo{width:35px;height:35px;font-size:12px}.record-title{padding:0;background:transparent;text-align:left;font-size:12px;display:block;max-width:260px;overflow-wrap:anywhere}.record-title:hover{color:var(--accent)}.record-sub{font-size:10px;color:var(--muted);margin-top:3px}.table-actions{display:flex;gap:9px;align-items:center;white-space:nowrap}.table-actions .text-button{font-size:11px}.date-label{font-size:11px;white-space:nowrap}.date-label.overdue{color:var(--red)}.subtext{display:block;font-size:10px;color:var(--muted);margin-top:3px;max-width:200px;overflow-wrap:anywhere}.review-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.review-card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:22px;min-width:0}.review-card-top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:18px}.review-card h3{font-size:16px;font-weight:550;line-height:1.7;margin:8px 0 4px;overflow-wrap:anywhere}.review-card .review-company{font-size:11px;color:var(--muted)}.review-excerpt{color:#777e72;font-size:12px;line-height:1.8;margin:16px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:43px;white-space:pre-wrap}.review-card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #efefe8;padding-top:13px}.action-count{font-size:10px;color:var(--muted)}.template-note{margin:18px 0;padding:18px 20px;background:#f0f3eb;border-radius:10px;color:#65755c;font-size:12px;line-height:1.9}.template-note strong{font-size:12px;font-weight:550;display:block;margin-bottom:5px}dialog{color:var(--ink);border:1px solid var(--line);background:var(--paper);padding:0;box-shadow:0 25px 90px #2635242a}dialog::backdrop{background:#29322666;backdrop-filter:blur(2px)}.editor{border-radius:18px;width:min(780px,calc(100% - 32px));max-height:90vh}.editor.wide{width:min(880px,calc(100% - 32px))}.dialog-header{display:flex;justify-content:space-between;align-items:flex-start;padding:26px 28px 21px;border-bottom:1px solid var(--line)}.dialog-header h2{font-size:21px;font-weight:550;letter-spacing:.5px;margin-top:6px}.dialog-body{padding:24px 28px;max-height:calc(90vh - 190px);overflow:auto}.dialog-footer{padding:17px 28px;display:flex;justify-content:flex-end;gap:9px;border-top:1px solid var(--line);background:#fff}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.full{grid-column:1/-1}.form-grid .field>span{font-size:12px}.form-grid .field input,.form-grid .field select,.form-grid .field textarea{font-size:13px;padding:10px 11px}.form-section-label{font-size:11px;color:var(--muted);letter-spacing:1px;border-bottom:1px solid var(--line);padding:8px 0;margin-top:4px}.salary-form{display:grid;grid-template-columns:1fr 12px 1fr 90px;gap:7px;align-items:center}.salary-form>span{font-size:11px;color:var(--muted);text-align:center}.required{color:var(--accent)}.form-message{margin-top:16px;color:var(--red);font-size:12px;white-space:pre-wrap}.detail{position:fixed;inset:0 0 0 auto;margin:0;height:100dvh;max-height:100dvh;width:min(640px,100%);max-width:100%;border-radius:15px 0 0 15px;overflow:auto}.detail-header{display:flex;justify-content:space-between;align-items:center;padding:20px 27px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:1}.detail-body{padding:27px}.detail .company-row{margin-bottom:22px}.detail h2{font-size:25px;line-height:1.6;font-weight:550;overflow-wrap:anywhere}.detail-sub{font-size:12px;color:var(--muted);margin-top:10px;display:flex;gap:12px;flex-wrap:wrap}.detail-actions{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0}.detail-section{padding:23px 0;border-top:1px solid var(--line)}.detail-section h3{font-size:14px;font-weight:550;margin-bottom:12px;display:flex;gap:9px;align-items:center}.detail-section p,.prose{font-size:12px;color:#626d5d;white-space:pre-wrap;line-height:2;overflow-wrap:anywhere}.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:22px 0}.meta-grid dt{font-size:10px;color:var(--muted)}.meta-grid dd{font-size:12px;margin:3px 0 0;overflow-wrap:anywhere}.timeline{margin:4px 0 0 7px;padding-left:22px;border-left:1px solid #dce1d5}.timeline-item{position:relative;padding-bottom:24px}.timeline-item:before{content:"";position:absolute;left:-27px;top:5px;height:8px;width:8px;border-radius:50%;background:#aebfa3;border:2px solid var(--paper)}.timeline-item:first-child:before{background:var(--accent)}.timeline-title{display:flex;align-items:center;gap:8px;font-size:12px}.timeline-title small{font-size:10px;color:var(--muted);margin-left:auto}.timeline-item p{font-size:12px;color:#75806e;line-height:1.9;white-space:pre-wrap;margin-top:7px;overflow-wrap:anywhere}.snapshot{background:white;border:1px solid var(--line);border-radius:9px;padding:16px}.snapshot summary{font-size:12px;cursor:pointer;color:#5e7356}.snapshot .prose{margin-top:16px}.snapshot .help{margin-top:10px}.review-prompt{font-size:11px;color:#84917a;line-height:1.8;margin-bottom:8px;background:#f1f4ec;padding:10px 13px;border-radius:7px}.review-group{margin-bottom:22px}.review-group>label{font-size:13px;font-weight:500;display:block;margin-bottom:8px}.review-group textarea{width:100%;border:1px solid #e3e7dc;border-radius:8px;background:white;padding:12px;font-size:12px;min-height:100px;resize:vertical;line-height:1.9}.review-jd-context{margin:17px 0;padding:15px;background:#edf1e8;border-radius:9px;font-size:11px;color:#6b7d60;line-height:1.9}.review-jd-context strong{display:block;color:#4f6847;font-weight:500;margin-bottom:4px}.task-list{display:grid;gap:11px}.task-list .check{align-items:flex-start;color:#58664f;font-size:12px;line-height:1.8}.task-list input{margin-top:4px;flex-shrink:0}.task-list .done{text-decoration:line-through;color:#98a08f}.link-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.help-block{font-size:12px;color:#68745f;line-height:2}.help-block h3{font-size:14px;font-weight:550;color:var(--ink);margin:18px 0 7px}.help-block h3:first-child{margin-top:0}.help-block p{margin-bottom:10px}.help-block ol{padding-left:20px}.source-list{display:flex;gap:8px;flex-wrap:wrap}.toast{position:fixed;bottom:28px;left:calc(50% + 90px);transform:translateX(-50%);background:#354b36;color:white;padding:12px 20px;border-radius:9px;box-shadow:0 8px 28px #22331f26;z-index:50;font-size:12px;max-width:90vw}.review-status{display:flex;align-items:center;gap:12px}.inline-memo{margin-top:14px;font-size:11px;color:var(--muted)}.overflow-anywhere{overflow-wrap:anywhere}.source-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.source-link svg{height:13px;width:13px}.data-error{padding:15px;color:var(--red);font-size:12px}.tag-list{margin-top:10px;display:flex;gap:7px;flex-wrap:wrap}
+@media(min-width:1600px){.job-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.filter-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1180px){.sidebar{width:195px;padding-left:14px;padding-right:14px}.workspace{margin-left:195px}.brand{font-size:22px}.nav-item{font-size:12px;gap:8px}main{padding:30px 27px 0}.topbar{padding:0 27px}.filter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.search-field{grid-column:span 2}.stat{padding:0 17px;gap:11px}.stat-icon{height:34px;width:34px}.stat-value{font-size:24px}.job-card{padding:19px}.job-subline .salary{margin-left:0}.sidebar-note{margin-top:35px}}
+@media(max-width:900px){.sidebar{width:172px;padding:28px 10px 16px}.workspace{margin-left:172px}.brand{gap:8px;padding-left:5px;font-size:20px}.brand small{font-size:7px;letter-spacing:1px}.brand-symbol{width:34px;height:39px;font-size:21px}.nav-item{padding:11px 8px;font-size:11px;gap:7px}.nav-count{font-size:9px;min-width:17px;line-height:18px}.nav-label{font-size:10px;letter-spacing:1px;margin-left:8px}.nav-item svg{width:16px;height:16px}.sidebar-note{margin:35px 8px 20px}.sidebar-note p{font-size:15px}.sidebar-note>span:last-child{font-size:7px}.sidebar-bottom .nav-item{padding:8px;font-size:11px}.local-state{margin-left:8px;font-size:9px}.page-heading{align-items:flex-start}h1{font-size:24px}.page-heading p{max-width:340px;font-size:11px}.page-heading .button{margin-top:22px}.stats{padding:17px 0}.stat{padding:0 13px;gap:8px}.stat-icon{display:none}.stat-value small{margin-left:6px;font-size:10px}.job-grid{grid-template-columns:1fr}.filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.search-field{grid-column:span 2}.review-list{grid-template-columns:1fr}.notice{align-items:flex-start}.notice>div{align-items:flex-start}.notice .text-button{font-size:10px}.view-tabs{gap:14px}.toast{left:calc(50% + 70px)}.season{display:none}}
+@media(max-width:600px){.sidebar{position:static;width:100%;height:auto;padding:17px 17px 0;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:21px}.brand-symbol{width:32px;height:35px;font-size:20px}.brand small{font-size:7px}.nav-label,.sidebar-note,.sidebar-bottom,.nav-count{display:none}.sidebar nav{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:16px}.nav-item{justify-content:center;margin:0;padding:12px 4px;border-radius:7px 7px 0 0;gap:6px;font-size:11px}.workspace{margin:0}.topbar{height:52px;padding:0 20px;font-size:10px}.topbar-right{gap:8px}.avatar{height:26px;width:26px;font-size:10px}main{padding:25px 17px 0}.eyebrow{font-size:8px;letter-spacing:1.6px}.page-heading{gap:9px}h1{font-size:22px;letter-spacing:0;margin-top:7px}.page-heading p{font-size:10px;max-width:230px;line-height:1.8}.page-heading .button{padding:8px;font-size:10px;gap:4px;margin-top:24px;min-height:34px}.page-heading .button svg{width:13px;height:13px}.stats{margin:23px 0 17px;padding:15px 0;border-radius:11px}.stat{padding:0 13px}.stat-value{font-size:23px}.stat-value small{font-size:9px;margin-left:3px}.stat-caption{font-size:9px;margin-top:5px}.notice{padding:10px;margin-bottom:18px;font-size:10px;gap:5px}.demo-notice{flex-wrap:wrap}.notice .text-button{margin-left:20px}.filters{padding:16px;border-radius:11px}.filter-grid{gap:13px 10px}.field>span,.field>label{font-size:10px}.field input,.field select{font-size:11px;padding:9px 8px}.search-control input{padding-left:31px}.section-heading{margin-bottom:15px}.section-heading h2{font-size:12px}.filter-note{font-size:10px}.filter-note .check{font-size:10px}.results-bar{margin:18px 0 14px;gap:6px}.view-tabs{gap:15px}.view-tab{font-size:11px}.sort-control{font-size:10px;max-width:110px}.job-card{padding:19px}.job-title{font-size:16px}.job-grid{gap:13px}.job-subline .salary{margin-left:auto}.page-footer{font-size:8px;padding:23px 0 18px}.toolbar{gap:9px}.toolbar>.search-control{min-width:100%;flex:1}.toolbar .input{font-size:12px}.toolbar .check{font-size:11px}.flow-strip{gap:6px}.flow-pill{padding:6px 9px;font-size:10px;gap:6px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.dialog-header{padding:20px}.dialog-header h2{font-size:19px}.dialog-body{padding:20px;max-height:calc(90dvh - 185px)}.dialog-footer{padding:14px 20px}.editor,.editor.wide{width:calc(100% - 20px);max-height:90dvh;border-radius:13px}.detail{border-radius:0}.detail-body{padding:23px 20px}.detail-header{padding:16px 20px}.detail h2{font-size:23px}.detail-actions{gap:7px}.detail-actions .button{font-size:11px;padding:8px 10px}.timeline-title{flex-wrap:wrap}.timeline-title small{margin-left:0;width:100%}.review-card{padding:19px}.toast{left:50%;bottom:20px;min-width:180px;text-align:center}.mobile-data-actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}.mobile-data-actions .text-button{font-size:11px}}
+.directory-intro{font-size:12px;color:#737c6e;line-height:1.9;padding:14px 16px;background:#f0f3eb;border-radius:9px;margin-bottom:20px}.directory-section{margin:0 0 25px}.directory-section>h3{font-size:15px;font-weight:550;margin-bottom:5px}.directory-section>.help{line-height:1.8;margin-bottom:9px}.directory-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px 3px;border-bottom:1px solid var(--line)}.directory-main{min-width:0}.directory-main strong{font-size:13px;font-weight:550}.directory-main .tag{margin-left:8px;vertical-align:2px}.directory-main p{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.7}.directory-row .button{font-size:11px;min-height:34px;padding:7px 10px}.directory-row .button svg{width:14px;height:14px;flex-shrink:0}
+@media(max-width:600px){.directory-row{align-items:flex-start}.directory-main .tag{display:inline-flex;margin:5px 0 0}.directory-row .button{flex-shrink:0}}
+.sidebar{overflow-y:auto}.sidebar-note{margin-top:25px}.nav-label{margin-top:32px}
+.overview-banner{padding:25px 27px;border:1px solid #dce4d5;border-radius:14px;background:linear-gradient(110deg,#eaf0e3,#f7f8f2);display:flex;align-items:center;justify-content:space-between;gap:18px}.overview-banner h2{font-size:21px;letter-spacing:.5px;color:#3d5740;font-weight:550;margin:7px 0}.overview-banner p{font-size:11px;color:#687a62;line-height:1.9;max-width:650px}.overview-controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:11px;margin:19px 0}.overview-controls>span:last-child{margin-left:auto}.overview-controls .check{font-size:11px}.overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.overview-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}.overview-card .section-heading{margin-bottom:10px}.overview-card h2 .tag{margin-left:5px}.wide-card{grid-column:1/-1}.quiet-state{font-size:12px;line-height:1.9;color:#8b9286;padding:20px 0 12px;max-width:360px}.agenda-row,.compact-row{display:flex;align-items:center;gap:12px;padding:16px 0;border-top:1px solid #f0f1eb;font-size:12px}.agenda-row:first-of-type,.compact-row:first-of-type{border:0}.agenda-date{font-size:11px;color:var(--green);min-width:105px;font-variant-numeric:tabular-nums}.agenda-date small{display:block;font-size:10px;margin-top:3px}.agenda-row strong,.compact-row strong{font-size:12px;font-weight:550;overflow-wrap:anywhere}.agenda-row p,.compact-row p{font-size:11px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}.agenda-row>.text-button,.compact-row>.text-button{margin-left:auto;font-size:11px;flex-shrink:0}.agenda-row>div,.compact-row>div{min-width:0}.overdue{color:var(--red)!important}.action-row{padding:13px 0;border-top:1px solid #f0f1eb;min-width:0}.action-row .check{font-size:12px;align-items:flex-start;line-height:1.9;color:#51654e;overflow-wrap:anywhere}.action-row input{flex-shrink:0;margin-top:5px}.action-row .done{color:#9da496;text-decoration:line-through}.action-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:5px 0 0 22px}.action-meta .text-button{font-size:10px;color:#8a9483;white-space:normal;text-align:left;padding-left:0}.deadline-button{background:#f4f5ef;color:#7e896f;border-radius:5px;padding:3px 7px;font-size:10px;margin-left:auto}.metrics-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:30px;margin-top:20px;align-items:center}.stage-list{display:grid;gap:12px}.stage-row{display:grid;grid-template-columns:85px 1fr 22px;gap:10px;align-items:center;font-size:11px;color:#717c68}.stage-row b{text-align:right;font-variant-numeric:tabular-nums}progress{appearance:none;border:none;background:#f0f2eb;height:7px;width:100%;border-radius:7px;overflow:hidden}progress::-webkit-progress-bar{background:#f0f2eb;border-radius:7px}progress::-webkit-progress-value{background:#8ba27b;border-radius:7px}progress::-moz-progress-bar{background:#8ba27b;border-radius:7px}.coverage{display:flex;flex-direction:column;font-size:11px;color:var(--muted);gap:5px}.coverage strong{font-size:29px;color:var(--green);font-weight:500}.coverage small{font-size:10px}.coverage progress{margin-top:8px}.metric-note{font-size:10px;line-height:1.9;color:#8a9283;margin-top:22px;border-top:1px solid var(--line);padding-top:14px}.match-panel{background:#f5f7f1;border:1px solid #e8ecdf;border-radius:8px;padding:12px 13px;margin-bottom:16px}.match-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:11px;color:#617b52}.match-head strong{font-weight:550}.match-head>span{font-size:10px;color:#8b957e}.match-panel>.text-button{font-size:10px;margin:5px 0 0;padding:0}.match-reasons{list-style:none;padding:0;margin:14px 0}.match-reasons li{display:flex;align-items:flex-start;gap:10px;padding:8px 0}.match-reasons strong{font-size:12px;font-weight:500}.match-reasons p{font-size:11px;line-height:1.7;margin-top:2px;color:#7c8772}.match-reasons .badge{flex-shrink:0}.priority-note{font-size:11px;color:var(--muted);margin-bottom:14px;line-height:1.8}
+@media(max-width:1200px){.overview-grid{grid-template-columns:1fr}.metrics-grid{grid-template-columns:1.3fr 1fr 1fr}.overview-banner h2{font-size:19px}}
+@media(max-width:600px){.sidebar nav{grid-template-columns:repeat(4,1fr)}.sidebar nav .nav-item{flex-direction:column;gap:5px;font-size:10px}.overview-banner{padding:19px;align-items:flex-start;flex-direction:column;gap:10px}.overview-banner h2{font-size:17px}.overview-controls{font-size:10px;gap:8px}.overview-controls>span:last-child{margin-left:0}.overview-card{padding:17px}.overview-grid{gap:13px}.metrics-grid{grid-template-columns:1fr 1fr;gap:22px}.stage-list{grid-column:1/-1}.agenda-row{flex-wrap:wrap;gap:8px}.agenda-date{min-width:100%;display:flex;justify-content:space-between}.agenda-row>.text-button{margin-left:auto}.agenda-date small{margin:0}.compact-row{align-items:flex-start}.overview-banner .button{font-size:11px}.overview-card h2{font-size:13px}.overview-controls .check{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="拾程首页"><span class="brand-symbol">拾</span><span>拾程<small>CAREER WORKSPACE</small></span></a>
+    <div class="nav-label">我的求职工作台</div>
+    <nav aria-label="主要导航">
+      <button class="nav-item" data-page="overview"><span data-icon="calendar"></span><span>求职总览</span></button>
+      <button class="nav-item" data-page="jobs"><span data-icon="compass"></span><span>招聘信息选取</span><span class="nav-count" id="jobs-count">0</span></button>
+      <button class="nav-item" data-page="applications"><span data-icon="layers"></span><span>笔面试记录</span><span class="nav-count" id="apps-count">0</span></button>
+      <button class="nav-item" data-page="reviews"><span data-icon="notebook"></span><span>笔面试复盘</span><span class="nav-count" id="reviews-count">0</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="little-star">✳</span><p>每一次尝试，<br>都离下一站更近一点。</p><span>KEEP GOING, KEEP GROWING</span></div>
+    <div class="sidebar-bottom">
+      <button class="nav-item" data-action="source-directory"><span data-icon="external"></span><span>公司招聘官网入口</span></button>
+      <button class="nav-item" data-action="export"><span data-icon="download"></span><span>导出数据备份</span></button>
+      <button class="nav-item" data-action="import"><span data-icon="upload"></span><span>导入数据</span></button>
+      <button class="nav-item" data-action="help"><span data-icon="info"></span><span>使用说明</span></button>
+      <div class="local-state"><span></span><span id="save-state">数据保存在当前浏览器</span></div>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div><span class="breadcrumb">个人空间</span><span class="slash">/</span><span id="breadcrumb">招聘信息选取</span></div><div class="topbar-right"><span class="season">作品演示 · 虚构示例</span><span class="avatar">我</span></div></header>
+    <main id="main" tabindex="-1">
+      <div id="storage-warning" class="notice warning" hidden></div>
+      <section class="page-heading"><div><div class="eyebrow" id="eyebrow">FIND YOUR NEXT CHAPTER</div><h1 id="page-title">找到值得投入的机会<span>。</span></h1><p id="page-subtitle">从心动的岗位出发，把每一步求职进展放在一起。</p></div><button class="button primary" id="primary-action"><span data-icon="plus"></span><span id="primary-label">录入岗位</span></button></section>
+      <div id="stats" class="stats"></div>
+      <div id="sync-status" class="notice" hidden></div>
+      <div id="demo-notice" class="notice demo-notice" hidden><div><span data-icon="sparkles"></span><span>作品演示：岗位、流程与复盘均为虚构示例；操作仅保存在当前浏览器。</span></div><button class="text-button" data-action="clear-demo">清除示例 <span aria-hidden="true">↗</span></button></div>
+      <section id="page-content" aria-label="工作区"></section>
+      <footer class="page-footer"><span>拾程 · 让每一步都有迹可循</span><span>为下一站，认真准备。</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="editor" class="editor"><form id="editor-form"><header class="dialog-header"><div><div class="eyebrow" id="modal-eyebrow">YOUR NEXT OPPORTUNITY</div><h2 id="modal-title"></h2></div><button type="button" class="icon-button" data-action="close-editor" aria-label="关闭窗口"><span data-icon="x"></span></button></header><div id="modal-body" class="dialog-body"></div><footer class="dialog-footer" id="modal-footer"></footer></form></dialog>
+  <dialog id="detail" class="detail"><header class="detail-header"><span id="detail-label" class="eyebrow">OPPORTUNITY DETAILS</span><button class="icon-button" data-action="close-detail" aria-label="关闭详情"><span data-icon="x"></span></button></header><div id="detail-content"></div></dialog>
+  <input id="import-input" type="file" accept="application/json,.json" hidden>
+<script>
+'use strict';
+window.SHICHENG_RECRUITMENT_LINKS = [
+  {
+    title: '深圳总部大型企业',
+    note: '500 强的范围会随榜单（《财富》世界 500 强 / 中国 500 强）和年份变化。先列深圳总部的重点企业招聘入口，申请前可按你采用的榜单年份核对。',
+    entries: [
+      { company: '腾讯', kind: '官方校招门户', url: 'https://join.qq.com/', note: '腾讯校招门户；可查看校园招聘和实习职位。' },
+      { company: '华为', kind: '官方校园招聘', url: 'https://career.huawei.com/cn/campus-recruitment', note: '华为招聘官网的校园招聘入口。' },
+      { company: '比亚迪', kind: '官方招聘门户', url: 'https://job.byd.com/', note: '比亚迪人力资源服务平台；从职位列表筛工作城市与实习类型。' },
+      { company: '中国平安', kind: '官方校园招聘', url: 'https://talent.pingan.com/recruit/campus.html', note: '平安集团校园招聘；搜索职位时核对具体用人单位与城市。' },
+      { company: '顺丰控股', kind: '公司官网', url: 'https://www.sf-express.com/cn/sc/index.html', note: '当前可确认的官方主页。官网招聘子站暂未核实，进入官网后找「加入顺丰 / 人才招聘」。' },
+      { company: '万科', kind: '公司官网', url: 'https://www.vanke.com/', note: '当前可确认的官方主页。官网招聘入口请从首页查找「人才招聘 / 加入万科」。' }
+    ]
+  },
+  {
+    title: 'AI、机器人与智能驾驶',
+    note: '含初创、成长企业及成熟 AI / 机器人企业，不统一视为初创公司。部分只确认到企业官网，请在站内查找招聘入口。',
+    entries: [
+      { company: '大疆 DJI', kind: '官方招聘门户', url: 'https://careers.dji.com/zh-CN/', note: '大疆招聘官网；可筛选职位地点、校招与实习岗位。' },
+      { company: '优必选 UBTECH', kind: '公司官网', url: 'https://www.ubtrobot.com/cn/', note: '深圳机器人企业官网；进入站内查找「加入我们 / 招聘」。' },
+      { company: '云天励飞 Intellifusion', kind: '公司官网', url: 'https://www.intellif.com/', note: '深圳 AI 企业官网；当前未确认独立招聘直达页，站内查找招聘信息。' },
+      { company: '元戎启行 DeepRoute.ai', kind: '公司官网', url: 'https://www.deeproute.ai/', note: '智能驾驶企业官网；招聘路径需在站内核实。' },
+      { company: '元象 XVERSE', kind: '公司官网', url: 'https://www.xverse.cn/en', note: 'AI 企业官网；当前未确认独立招聘直达页及深圳 / 广州岗位。' }
+    ]
+  },
+  {
+    title: '银行',
+    note: '银行与 AI 企业的总部不一定在深圳；请以职位详情中的工作地点是否为深圳 / 广州为准。',
+    entries: [
+      { company: '招商银行', kind: '官方实习招聘', url: 'https://career.cmbchina.com/positionlist/DF94FD6D-26D3-4A19-9E69-577C4BA1DE82', note: '招商银行「梦工场·实习生招聘」职位列表；可筛选城市。信息技术方向需以当前职位详情为准。' },
+      { company: '平安集团（含平安银行）', kind: '官方校园招聘', url: 'https://talent.pingan.com/recruit/campus.html', note: '平安集团校招入口；确认岗位所属公司是平安银行及对应城市。' },
+      { company: '微众银行', kind: '公司官网', url: 'https://www.webank.com/', note: '微众银行官方主页；进入站内查找「加入我们 / 人才招聘」。' }
+    ]
+  },
+  {
+    title: '证券与交易所',
+    note: '下方标为招聘门户的链接来自公司官网导航或其官方招聘页面。',
+    entries: [
+      { company: '招商证券', kind: '官方招聘门户', url: 'https://cms.hotjob.cn/', note: '招商证券官网「人才招聘」跳转的招聘门户；职位入口以跳转后的页面为准。' },
+      { company: '广发证券', kind: '实习招聘直达', url: 'https://wecruit.hotjob.cn/SU625527c30dcad4021443cdda/pb/interns.html', note: '广发证券官网招聘平台的实习岗位页面；筛选深圳、广州。' },
+      { company: '国信证券', kind: '公司官网', url: 'https://www.guosen.com.cn/gs/index.html', note: '国信证券官方主页；招聘入口请在站内查找「人才招聘」。' },
+      { company: '深圳证券交易所', kind: '机构官网', url: 'https://www.szse.cn/index/index.html', note: '深交所官方主页；公开招聘信息请在站内查找，职位发布可能按批次进行。' }
+    ]
+  }
+];
+
+'use strict';
+// Pure rules shared by the workbench and offline regression checks.
+window.SHICHENG_DECISIONS = (() => {
+ const defaults = () => ({enabled:false,cities:['深圳','广州'],roles:['FDE','产品','数据分析','运营','信息技术','金融科技'],days:0,months:0});
+ function preferences(value) {
+  if(value===undefined)return defaults();
+  const list=x=>Array.isArray(x)&&x.length<=20&&x.every(s=>typeof s==='string'&&s.trim()&&s.length<=50);
+  if(!value||typeof value.enabled!=='boolean'||!list(value.cities)||!list(value.roles)||!Number.isInteger(value.days)||value.days<0||value.days>7||!Number.isInteger(value.months)||value.months<0||value.months>36)throw Error('求职偏好格式无效');
+  return {enabled:value.enabled,cities:[...new Set(value.cities.map(x=>x.trim()))],roles:[...new Set(value.roles.map(x=>x.trim()))],days:value.days,months:value.months};
+ }
+ const cityTokens = city => String(city||'').split(/[/／、,，;；\s]+/).filter(Boolean).map(x=>x.replace(/市$/,''));
+ function titleMatches(title, term) {
+  const text=title.toLowerCase(),q=term.toLowerCase();
+  if(q==='fde')return /\bfde\b|forward[ -]deployed|前线部署|前沿部署|驻场部署/i.test(title);
+  if(q==='ai产品'||q==='ai 产品')return /(?:ai|人工智能|大模型)\s*产品/i.test(title);
+  return text.includes(q);
+ }
+ function assess(job,profile) {
+  const p=preferences(profile),rows=[];
+  if(!p.enabled)return {enabled:false,score:null,rows,known:0,total:0,conflicts:0,closed:job.sync?.availability==='closed'};
+  const add=(label,weight,known,match,evidence)=>rows.push({label,weight,status:!known?'unknown':match?'match':'conflict',evidence});
+  if(p.cities.length){const cities=cityTokens(job.city);add('工作城市',35,cities.length>0,cities.some(x=>p.cities.flatMap(cityTokens).includes(x)),job.city||'岗位未填写城市');}
+  if(p.roles.length)add('岗位方向',35,Boolean(job.title),p.roles.some(r=>titleMatches(job.title||'',r)),job.title||'岗位未填写名称');
+  if(p.days)add('每周出勤',15,Boolean(job.days),p.days>=job.days,job.days?`岗位至少 ${job.days} 天 / 我可 ${p.days} 天`:'岗位未披露出勤要求');
+  if(p.months)add('实习时长',15,Boolean(job.months),p.months>=job.months,job.months?`岗位至少 ${job.months} 个月 / 我可 ${p.months} 个月`:'岗位未披露时长要求');
+  const totalWeight=rows.reduce((s,r)=>s+r.weight,0),points=rows.filter(r=>r.status==='match').reduce((s,r)=>s+r.weight,0);
+  return {enabled:true,score:totalWeight?Math.round(points/totalWeight*100):null,rows,known:rows.filter(r=>r.status!=='unknown').length,total:rows.length,conflicts:rows.filter(r=>r.status==='conflict').length,closed:job.sync?.availability==='closed'};
+ }
+ function compare(a,b,profile) {
+  const aa=assess(a,profile),bb=assess(b,profile);
+  return Number(aa.closed)-Number(bb.closed)||(bb.score??-1)-(aa.score??-1)||b.updatedAt.localeCompare(a.updatedAt)||a.id.localeCompare(b.id);
+ }
+ const calendarDay = date => Date.parse(date.slice(0,10)+'T00:00:00+08:00');
+ function dashboard(state,now,includeDemo=false) {
+  const today=now.slice(0,10),jobMap=new Map(state.jobs.map(j=>[j.id,j]));
+  const personal=x=>includeDemo||(!x.demo&&!jobMap.get(x.jobId)?.demo);
+  const apps=state.applications.filter(personal),reviews=state.reviews.filter(personal);
+  const pending=apps.filter(a=>['待笔试','待面试'].includes(a.status));
+  const appointments=pending.filter(a=>!a.scheduledAt||calendarDay(a.scheduledAt)-calendarDay(today)<=6*86400000).map(a=>({app:a,kind:!a.scheduledAt?'待确认时间':a.scheduledAt<now?'已过时间，请更新':a.scheduledAt.slice(0,10)===today?'今天':'未来 7 天'})).sort((a,b)=>(a.app.scheduledAt||'9999').localeCompare(b.app.scheduledAt||'9999'));
+  const followups=apps.filter(a=>['笔试完成','面试完成'].includes(a.status)).map(a=>({app:a,days:Math.floor((calendarDay(today)-calendarDay(a.events.at(-1).eventAt))/86400000)})).filter(x=>x.days>=7);
+  const eligible=apps.map(app=>{
+   let event=app.events.filter(e=>['笔试完成','面试完成','已拒绝','已获 Offer'].includes(e.status)).at(-1);
+   // Later HR outcomes must not invalidate a completed review of the same round.
+   if(event&&['已拒绝','已获 Offer'].includes(event.status))event=app.events.filter(e=>['笔试完成','面试完成'].includes(e.status)&&e.round===event.round).at(-1)||event;
+   return {app,event};
+  }).filter(x=>x.event);
+  const covered=({app,event})=>reviews.some(r=>r.status==='completed'&&r.applicationId===app.id&&r.round===event.round&&r.date>=event.eventAt.slice(0,10));
+  const reviewNeeded=eligible.filter(x=>!covered(x));
+  const tasks=reviews.flatMap(review=>review.tasks.map((task,index)=>({task,review,index,overdue:!task.done&&Boolean(task.dueDate)&&task.dueDate<today})));
+  const pendingTasks=tasks.filter(x=>!x.task.done).sort((a,b)=>(a.task.dueDate||'9999').localeCompare(b.task.dueDate||'9999')||b.review.updatedAt.localeCompare(a.review.updatedAt));
+  const stages=[['收到反馈',apps.length],['曾进入笔试',apps.filter(a=>a.events.some(e=>['待笔试','笔试完成'].includes(e.status))).length],['曾进入面试',apps.filter(a=>a.events.some(e=>['待面试','面试完成'].includes(e.status))).length],['获得 Offer',apps.filter(a=>a.events.some(e=>e.status==='已获 Offer')).length]];
+  return {apps,reviews,appointments,followups,reviewNeeded,pendingTasks,stages,taskTotal:tasks.length,taskDone:tasks.filter(x=>x.task.done).length,reviewTotal:eligible.length,reviewDone:eligible.length-reviewNeeded.length};
+ }
+ return Object.freeze({defaults,preferences,assess,compare,dashboard});
+})();
+
+'use strict';
+(() => {
+const $ = (s, root = document) => root.querySelector(s);
+const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const icons = {
+ plus:'<path d="M12 5v14M5 12h14"/>', x:'<path d="m6 6 12 12M6 18 18 6"/>',
+ compass:'<circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5z"/>',
+ layers:'<path d="m12 3 10 6-10 6L2 9zM3 13l9 5 9-5M3 17l9 5 9-5"/>',
+ notebook:'<path d="M6 3h13v18H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2ZM8 3v18M11 8h5M11 12h5"/>',
+ download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
+ upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5"/>',
+ info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>',
+ search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
+ bookmark:'<path d="M6 3h12v18l-6-4-6 4z"/>',
+ arrow:'<path d="M5 12h14m-5-5 5 5-5 5"/>',
+ external:'<path d="M14 3h7v7m0-7L10 14M10 3H3v18h18v-7"/>',
+ sliders:'<path d="M4 7h6m4 0h6M4 17h10m4 0h2M10 4v6M14 14v6"/>',
+ sparkles:'<path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5zM20 2v4m-2-2h4"/>',
+ calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18m-12 5h2"/>',
+ check:'<path d="m5 12 4 4L19 6"/>', mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
+};
+const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name] || icons.info}</svg>`;
+function hydrate(root = document) { $$('[data-icon]', root).forEach(el => el.innerHTML = icon(el.dataset.icon)); }
+const SOURCES = ['公司官网','BOSS直聘','实习僧','智联招聘','猎聘'];
+const INDUSTRIES = ['互联网 / 科技','金融 / 咨询','消费 / 零售','制造 / 硬件','医药 / 健康','传媒 / 内容','教育','其他'];
+const STATUSES = ['待笔试','笔试完成','待面试','面试完成','已获 Offer','已拒绝','已撤回'];
+const KINDS = ['笔试','业务面','技术面','HR 面','拒绝复盘','综合复盘'];
+const REVIEW_FIELDS=['context','questions','strengths','gaps','asks'];
+const CLOSED = ['已获 Offer','已拒绝','已撤回'];
+const PENDING = ['待笔试','待面试'];
+const STORAGE_KEY = 'shicheng-public-demo-v1';
+const uid = prefix => `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,9)}`;
+function chinaNow() {
+ const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+ return `${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}`;
+}
+const today = () => chinaNow().slice(0,10);
+const plusDays = n => { const d = new Date(`${today()}T12:00:00+08:00`);d.setUTCDate(d.getUTCDate()+n);return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(d); };
+const timestamp = () => new Date().toISOString();
+function dateText(value, time = false) { if (!value) return '未填写';return value.slice(0,10).replace(/-/g,'.') + (time && value.includes('T') ? ` ${value.slice(11,16)}` : ''); }
+function salaryText(j) { if (!j.salaryMin) return j.sync ? '薪资未披露' : '薪资面议';return `${j.salaryMin}${j.salaryMax && j.salaryMax !== j.salaryMin ? '–'+j.salaryMax : ''} 元/${j.salaryUnit === 'month' ? '月' : '天'}`; }
+function safeURL(v) { try { const u = new URL(v); return ['http:','https:'].includes(u.protocol) && !u.username && !u.password ? u.href : ''; } catch { return ''; } }
+function seededState() {
+ const now=timestamp();
+ const job=(id,company,title,industry,city,source,hqRegion,hqAddress,salaryMin,salaryMax,tags,days,months,jd,url,logoTone)=>({id,company,title,industry,city,source,hqRegion,hqAddress,salaryMin,salaryMax,salaryUnit:'day',tags,days,months,jd,url,logoTone,favorite:false,demo:true,createdAt:now,updatedAt:now});
+ const jobs=[
+ job('demo-job-1','腾讯','产品策划实习生','互联网 / 科技','深圳','公司官网','中国','中国 · 深圳',200,250,['产品设计','用户研究','需求分析'],4,3,'岗位职责\n1. 参与产品用户需求分析，整理用户反馈并提出优化方案。\n2. 协助完成产品原型、需求文档及项目进度跟踪。\n3. 通过数据分析验证产品方案，关注核心指标变化。\n\n任职要求\n1. 在校本科生或研究生，对互联网产品有热情。\n2. 具备结构化思考、沟通协作和基础数据分析能力。\n3. 熟悉 Figma / Axure，有完整产品分析经历优先。\n4. 每周至少 4 天，持续实习 3 个月及以上。\n\n此 JD 为功能演示编写，并非真实招聘信息。','https://careers.tencent.com/','blue'),
+ job('demo-job-2','字节跳动','数据分析实习生','互联网 / 科技','上海','BOSS直聘','中国','中国 · 北京',250,300,['SQL','Python','数据分析'],4,4,'岗位职责\n1. 支持业务数据分析，建立关键指标和数据看板。\n2. 参与 A/B 实验评估、异常归因和专题分析。\n3. 将分析结果转化为可执行的业务建议。\n\n任职要求\n1. 熟悉 SQL，能够处理多表关联、窗口函数及去重。\n2. 了解统计检验、实验设计与常见业务指标。\n3. 熟练使用 Python 或其他分析工具。\n4. 每周至少 4 天，持续 4 个月以上。\n\n此 JD 为功能演示编写，并非真实招聘信息。','https://www.zhipin.com/','purple'),
+ job('demo-job-3','宝洁','品牌市场实习生','消费 / 零售','广州','实习僧','海外','美国 · 辛辛那提',180,220,['品牌营销','消费者洞察','英语'],3,3,'岗位职责\n1. 协助市场调研、消费者洞察和竞品研究。\n2. 参与品牌活动策划与内容执行。\n3. 支持跨部门沟通和项目资料整理。\n\n任职要求\n1. 对消费品牌和营销有兴趣，沟通表达清晰。\n2. 能以英语开展日常书面与口头沟通。\n3. 熟练使用 Excel 与 PowerPoint。\n4. 每周至少 3 天，实习 3 个月以上。\n\n此 JD 为功能演示编写，并非真实招聘信息。','https://www.shixiseng.com/','blue'),
+ job('demo-job-4','西门子','战略与运营实习生','制造 / 硬件','北京','智联招聘','海外','德国 · 慕尼黑',180,250,['行业研究','Excel','项目支持'],3,3,'岗位职责\n1. 收集行业资料，参与市场与竞争格局分析。\n2. 支持运营报表、会议纪要与项目进展跟踪。\n\n任职要求\n1. 逻辑清晰，具备信息检索、Excel 分析和英文阅读能力。\n2. 能持续每周 3 天，至少 3 个月。\n\n此 JD 为功能演示编写，并非真实招聘信息。','https://www.zhaopin.com/','green'),
+ job('demo-job-5','小米','前端开发实习生','互联网 / 科技','北京','猎聘','中国','中国 · 北京',250,350,['JavaScript','React','前端工程'],4,4,'岗位职责\n1. 参与业务 Web 应用的前端开发与组件建设。\n2. 配合产品和设计完成交互与性能优化。\n3. 参与代码审查、功能测试和线上问题排查。\n\n任职要求\n1. 熟悉 JavaScript、HTML、CSS 与浏览器基础。\n2. 熟悉 React 或 Vue，了解状态管理和异步请求。\n3. 有项目实践，能够说明技术选择及其取舍。\n\n此 JD 为功能演示编写，并非真实招聘信息。','https://www.liepin.com/','orange'),
+ job('demo-job-6','联合利华','人力资源实习生','消费 / 零售','上海','公司官网','海外','英国 · 伦敦',0,0,['招聘支持','沟通协调','Excel'],3,3,'岗位职责\n1. 支持招聘流程、候选人沟通和面试安排。\n2. 维护招聘数据及相关运营文档。\n\n任职要求\n1. 细致负责，沟通表达和协作能力良好。\n2. 熟悉办公软件，每周可实习 3 天以上。\n\n此 JD 为功能演示编写，并非真实招聘信息。','https://careers.unilever.com/','purple')
+ ];
+ jobs[0].favorite=true;jobs[1].favorite=true;jobs[4].favorite=true;
+ const applications=[
+ {id:'demo-app-1',jobId:jobs[0].id,appliedAt:plusDays(-6),status:'待面试',round:'业务一面',scheduledAt:plusDays(2)+'T14:00',hrName:'招聘负责人（示例）',demo:true,jdSnapshot:{...jobs[0]},createdAt:now,updatedAt:now,events:[{id:'demo-event-1',status:'待笔试',round:'在线测评',eventAt:plusDays(-5)+'T10:00',scheduledAt:plusDays(-3)+'T18:00',channel:'邮件',notes:'收到在线测评邀请，注意完成截止时间。'},{id:'demo-event-2',status:'笔试完成',round:'在线测评',eventAt:plusDays(-3)+'T15:00',scheduledAt:'',channel:'自行更新',notes:'已完成测评，等待后续通知。'},{id:'demo-event-3',status:'待面试',round:'业务一面',eventAt:plusDays(-1)+'T11:00',scheduledAt:plusDays(2)+'T14:00',channel:'邮件',notes:'收到一面邀请，准备产品案例和项目介绍。'}]},
+ {id:'demo-app-2',jobId:jobs[1].id,appliedAt:plusDays(-4),status:'待笔试',round:'SQL / 数据分析笔试',scheduledAt:plusDays(1)+'T20:00',hrName:'HR（示例）',demo:true,jdSnapshot:{...jobs[1]},createdAt:now,updatedAt:now,events:[{id:'demo-event-4',status:'待笔试',round:'SQL / 数据分析笔试',eventAt:plusDays(-1)+'T09:30',scheduledAt:plusDays(1)+'T20:00',channel:'招聘平台',notes:'已收到笔试邀请，截止前提交。'}]},
+ {id:'demo-app-3',jobId:jobs[4].id,appliedAt:plusDays(-10),status:'已拒绝',round:'技术一面',scheduledAt:'',hrName:'招聘负责人（示例）',demo:true,jdSnapshot:{...jobs[4]},createdAt:now,updatedAt:now,events:[{id:'demo-event-5',status:'待面试',round:'技术一面',eventAt:plusDays(-8)+'T15:30',scheduledAt:plusDays(-6)+'T14:00',channel:'电话',notes:'邀请技术一面。'},{id:'demo-event-6',status:'面试完成',round:'技术一面',eventAt:plusDays(-6)+'T15:00',scheduledAt:'',channel:'自行更新',notes:'追问了 React 渲染机制和项目性能优化。'},{id:'demo-event-7',status:'已拒绝',round:'技术一面',eventAt:plusDays(-3)+'T10:30',scheduledAt:'',channel:'邮件',notes:'收到本次流程未通过的通知。'}]}
+ ];
+ const reviews=[{id:'demo-review-1',jobId:jobs[4].id,applicationId:'demo-app-3',jdSnapshot:{...jobs[4]},kind:'技术面',round:'技术一面',date:plusDays(-5),status:'completed',demo:true,context:'45 分钟技术面，主要考察前端基础和项目深度。',questions:'1. React 为什么需要 key？\n2. 说一个你定位并解决性能瓶颈的例子。\n3. 事件循环中微任务与宏任务如何执行？',strengths:'能够完整介绍项目目标、我的职责和最终结果；回答 JavaScript 基础时有具体例子。',gaps:'性能优化只说了方案，没有讲清楚如何测量和验证。对 React 重渲染的边界理解不够系统。',asks:'团队的代码审查如何开展？实习生通常承担哪些独立任务？',tasks:[{text:'补一个用 Performance 面板定位性能问题的完整案例',done:false},{text:'整理 React 渲染与 key 的示例',done:true},{text:'录制一遍 3 分钟的项目介绍，并加入量化结果',done:false}],createdAt:now,updatedAt:now}];
+ return {version:1,jobs,applications,reviews,preferences:{...window.SHICHENG_DECISIONS.defaults(),enabled:true,days:4,months:3}};
+}
+let storageOK=true, state;
+try { const raw=localStorage.getItem(STORAGE_KEY);state=raw ? validateState(JSON.parse(raw)) : window.SHICHENG_DAILY_FEED ? {version:1,jobs:[],applications:[],reviews:[]} : seededState(); } catch (error) { state={version:1,jobs:[],applications:[],reviews:[]};storageOK=false;$('#storage-warning').textContent='无法读取已保存的数据，已暂停自动保存。请先导出可用数据或导入有效备份，避免覆盖原记录。';$('#storage-warning').hidden=false; }
+state.preferences=window.SHICHENG_DECISIONS.preferences(state.preferences);
+if(storageOK){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{storageOK=false;showStorageWarning();}}
+let page=['overview','jobs','applications','reviews'].includes(location.hash.slice(1)) ? location.hash.slice(1) : 'overview';
+let filters={keyword:'',industry:'',city:'',source:'',sourceType:'',hqRegion:'',salaryMin:'',salaryUnit:'day',negotiable:false,tab:'all',sort:'priority'};
+let appFilter={keyword:'',status:'all'}, reviewFilter={keyword:'',status:'all',kind:'',pending:false};
+let editorContext=null, detailContext=null, returnFocus=null, toastTimer;
+let dailyFeed=null, dailyFeedError='';
+function comparableURL(value){try{const u=new URL(value);u.hash='';['from','source','spm'].forEach(k=>u.searchParams.delete(k));[...u.searchParams.keys()].filter(k=>k.startsWith('utm_')).forEach(k=>u.searchParams.delete(k));u.searchParams.sort();return u.href;}catch{return '';}}
+function applyDailyFeed(feed){
+ if(!feed)return;
+ try{
+  if(feed.version!==1||!Array.isArray(feed.jobs)||!Array.isArray(feed.sources)||!feed.generatedAt||!Number.isFinite(new Date(feed.generatedAt).getTime()))throw Error('更新包格式无效');
+  const jobs=validateState({version:1,jobs:feed.jobs,applications:[],reviews:[]}).jobs;
+  for(const incoming of jobs){
+   if(!incoming.sync)throw Error('自动岗位缺少核验信息');
+  }
+  dailyFeed=feed;
+  for(const incoming of jobs){
+   const existing=state.jobs.find(j=>j.id===incoming.id||!j.demo&&comparableURL(j.url)===comparableURL(incoming.url));
+   if(existing){
+    const managed=existing.sync?.managed===true;
+    if(managed){const keep={id:existing.id,favorite:existing.favorite,createdAt:existing.createdAt};Object.assign(existing,incoming,keep);}
+    else existing.sync={...incoming.sync,managed:false};
+   }else if(state.jobs.length<3000)state.jobs.unshift(incoming);
+  }
+  if(storageOK){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{storageOK=false;showStorageWarning();}}
+ }catch(error){dailyFeedError=error.message;}
+}
+function renderSyncStatus(){$('#sync-status').hidden=true;}
+function openSyncStatus(){toast('公开演示未接入招聘自动采集服务');}
+function openRecruitmentDirectory(){
+ const groups=window.SHICHENG_RECRUITMENT_LINKS||[];
+ const body=groups.map(group=>`<section class="directory-section"><h3>${esc(group.title)}</h3>${group.note?`<p class="help">${esc(group.note)}</p>`:''}<div class="directory-list">${group.entries.map(entry=>`<div class="directory-row"><div class="directory-main"><strong>${esc(entry.company)}</strong><span class="tag">${esc(entry.kind)}</span><p>${esc(entry.note)}</p></div><a class="button" href="${esc(safeURL(entry.url))}" target="_blank" rel="noopener noreferrer">${icon('external')}打开官网</a></div>`).join('')}</div></section>`).join('');
+ showEditor('公司招聘官网入口',`<div class="directory-intro">以下链接优先选择企业官网或由官网链接的招聘门户。公司官网入口会标明「招聘入口需站内寻找」。500 强名单按榜单与年份不同而变化，这里列的是深圳总部大型企业候选，不代表同一年度榜单的完整名单。</div>${body}<div class="directory-intro">检索时建议使用：实习 / 校园招聘 / 社会招聘，并将工作地点筛到深圳或广州；岗位开放状态和实习地点请以职位详情页为准。</div>`,`<button type="button" class="button primary" data-action="close-editor">关闭</button>`,{type:'directory'},true);
+}
+function syncBadge(j){if(!j.sync)return '';const v=j.sync.availability;return `<span class="tag ${v==='closed'?'demo':''}">${v==='closed'?'官网已关闭':v==='open'?'官网已核实':'待重新核实'}</span>`;}
+function showStorageWarning(){ $('#storage-warning').hidden=false;$('#storage-warning').textContent='当前浏览器无法保存本地数据。你仍可使用本页；关闭前请导出备份。';$('#save-state').textContent='未持久保存 · 请导出备份'; }
+function commit(){ if(storageOK){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{storageOK=false;showStorageWarning();}}render(); }
+function toast(message){const el=$('#toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,4200);}
+const savedMessage = text => toast(storageOK ? text : text+'；当前未写入浏览器，请导出备份');
+function getJob(id){return state.jobs.find(x=>x.id===id);}
+function getApp(id){return state.applications.find(x=>x.id===id);}
+function getReview(id){return state.reviews.find(x=>x.id===id);}
+function appForJob(id){return state.applications.find(x=>x.jobId===id);}
+function companyLogo(j){return `<span class="company-logo logo-${['blue','orange','purple','green'].includes(j.logoTone)?j.logoTone:'green'}">${esc(j.company.slice(0,2))}</span>`;}
+function badge(status){const tone=status==='已获 Offer'?'gold':status==='已拒绝'?'red':status==='已撤回'?'gray':PENDING.includes(status)?'blue':'green';return `<span class="badge ${tone}">${esc(status)}</span>`;}
+function options(values,selected,placeholder){return (placeholder!==undefined?`<option value="">${esc(placeholder)}</option>`:'')+values.map(v=>`<option value="${esc(v)}" ${String(v)===String(selected)?'selected':''}>${esc(v)}</option>`).join('');}
+function empty(title,text,action='add-job',label='录入第一个岗位'){return `<div class="empty"><div class="empty-symbol">✳</div><h3>${esc(title)}</h3><p>${esc(text)}</p><button class="button primary" data-action="${action}">${icon('plus')}${esc(label)}</button></div>`;}
+let overviewExamples=true;
+const decisionRules=window.SHICHENG_DECISIONS;
+function profile() { return state.preferences||decisionRules.defaults(); }
+function openPreferences(){
+ const p=profile();
+ showEditor('设置你的求职偏好',`<p class="directory-intro">设置想去的城市、岗位方向和可投入的时间，帮助你比较机会。评分只比较已填写的条件，不评估能力或录用概率。</p><div class="form-grid"><label class="field full"><span>目标城市（用逗号分隔，留空不限）</span><input name="cities" value="${esc(p.cities.join('，'))}" maxlength="500" placeholder="深圳，广州"></label><label class="field full"><span>岗位名称关键词（任一命中，用逗号分隔）</span><input name="roles" value="${esc(p.roles.join('，'))}" maxlength="500" placeholder="FDE，产品，数据分析，运营，信息技术"></label>${field('availableDays','每周可出勤天数（留空不限）',p.days||'','number','min="1" max="7" step="1"')}${field('availableMonths','可持续实习月数（留空不限）',p.months||'','number','min="1" max="36" step="1"')}<label class="check full"><input type="checkbox" name="enabled" ${p.enabled?'checked':''}>启用条件评分与优先级排序</label></div><p class="inline-memo">城市和方向各占 35 分，出勤和时长各占 15 分。未设置的条件不参与；岗位未披露的信息标为待确认且不加分，结果按已启用条件折算到 100 分。岗位方向只匹配职位名称，请结合 JD 判断。</p><p class="form-message" id="form-error" role="alert"></p>`,cancelFooter+'<button type="submit" class="button primary">保存偏好</button>',{type:'preferences'});
+}
+function matchHTML(j,expanded=false){
+ const m=decisionRules.assess(j,profile());
+ if(!m.enabled)return expanded?'<p class="help">设置求职偏好后，可以查看岗位条件与你的匹配情况。</p><button class="text-button" data-action="preferences">设置求职偏好 ↗</button>':'';
+ const label=m.closed?'官网已关闭':m.score===null?'尚未设置比较条件':`条件匹配 ${m.score} / 100`;
+ const headline=`<div class="match-head"><strong>${label}</strong><span>${m.known} / ${m.total} 项已知${m.conflicts?` · ${m.conflicts} 项不符`:''}</span></div>`;
+ const rows=m.rows.map(r=>`<li><span class="badge ${r.status==='match'?'green':r.status==='unknown'?'gold':'red'}">${r.status==='match'?'符合':r.status==='unknown'?'待确认':'不符'}</span><div><strong>${esc(r.label)}</strong><p>${esc(r.evidence)}</p></div></li>`).join('');
+ return `<div class="match-panel">${headline}${expanded?`<ul class="match-reasons">${rows}</ul><p class="help">仅比较城市、职位名称与实习时间；未披露条件不加分。${m.closed?'已关闭岗位排在最后。':''}</p><button class="text-button" data-action="preferences">调整求职偏好 ↗</button>`:`<button class="text-button" data-action="job-detail" data-id="${esc(j.id)}">查看依据 ${icon('arrow')}</button>`}</div>`;
+}
+function openTaskPlan(reviewId,index){
+ const r=getReview(reviewId),t=r?.tasks[index];if(!t)return;
+ showEditor('给改进行动设一个期限',`<p class="directory-intro">${esc(t.text)}</p><div class="form-grid">${field('dueDate','计划完成日期（留空表示暂不设定）',t.dueDate||'','date')}</div><p class="inline-memo">到期状态会显示在求职总览和复盘详情中。时间以北京时间为准，提醒仅在工作台内展示。</p><p class="form-message" id="form-error" role="alert"></p>`,cancelFooter+'<button type="submit" class="button primary">保存期限</button>',{type:'task-plan',id:reviewId,index});
+}
+function taskRow(r,t,i){
+ const overdue=!t.done&&t.dueDate&&t.dueDate<today();
+ return `<div class="action-row"><label class="check ${t.done?'done':''}"><input type="checkbox" data-task="${i}" data-review="${esc(r.id)}" ${t.done?'checked':''}><span>${esc(t.text)}</span></label><div class="action-meta"><button class="text-button" data-action="review-detail" data-id="${esc(r.id)}">${esc(r.jdSnapshot.company)} · ${esc(r.kind)}</button><button class="deadline-button ${overdue?'overdue':''}" data-action="task-plan" data-id="${esc(r.id)}" data-value="${i}">${t.dueDate?`${overdue?'已逾期 · ':''}${dateText(t.dueDate)}`:'设置期限'}</button></div></div>`;
+}
+function renderOverview(){
+ const d=decisionRules.dashboard(state,chinaNow(),overviewExamples),hasDemo=state.jobs.some(j=>j.demo),p=profile();
+ const quiet=text=>`<p class="quiet-state">${text}</p>`;
+ const card=(title,count,body,extra='')=>`<section class="overview-card"><div class="section-heading"><h2>${title}<span class="tag">${count}</span></h2>${extra}</div>${body}</section>`;
+ const appointments=d.appointments.map(({app:a,kind})=>`<div class="agenda-row"><span class="agenda-date ${kind.startsWith('已过')?'overdue':''}">${a.scheduledAt?dateText(a.scheduledAt,true):'待确认'}<small>${kind}</small></span><div><strong>${esc(a.jdSnapshot.company)}</strong><p>${esc(a.round||a.jdSnapshot.title)}</p></div><button class="text-button" data-action="app-detail" data-id="${esc(a.id)}">查看安排 ↗</button></div>`).join('');
+ const followups=d.followups.map(({app:a,days})=>`<div class="compact-row"><div><strong>${esc(a.jdSnapshot.company)} · ${esc(a.round||a.status)}</strong><p>距最后记录 ${days} 天，可确认当前进展</p></div><button class="text-button" data-action="update-app" data-id="${esc(a.id)}">更新进度</button></div>`).join('');
+ const missing=d.reviewNeeded.map(({app:a,event:e})=>`<div class="compact-row"><div><strong>${esc(a.jdSnapshot.company)} · ${esc(e.round||e.status)}</strong><p>${dateText(e.eventAt)} · 尚无对应轮次的已完成复盘</p></div><button class="text-button" data-action="review-event" data-id="${esc(a.id)}" data-value="${esc(e.id)}">开始复盘</button></div>`).join('');
+ const metric=(label,n,total)=>`<div class="coverage"><span>${label}</span><strong>${total?Math.round(n/total*100)+'%':'—'}</strong><small>${n} / ${total} ${total?'':' · 暂无记录'}</small><progress value="${n}" max="${total||1}" aria-label="${label}"></progress></div>`;
+ $('#page-content').innerHTML=`<div class="overview-banner"><div><span class="eyebrow">YOUR NEXT MOVE</span><h2>让准备有方向，让改进有期限。</h2><p>${p.enabled?'已启用条件评分 · '+esc(p.cities.join(' / ')||'城市不限')+' · '+esc(p.roles.join(' / ')||'方向不限'):'先设置求职偏好，再查看每个岗位的匹配依据。'}</p></div><button class="button" data-action="preferences">${icon('sliders')}求职偏好</button></div><div class="overview-controls"><span>${overviewExamples?'当前包含虚构示例，仅用于体验':'仅统计真实记录，排除示例及其关联记录'}</span>${hasDemo?`<label class="check"><input type="checkbox" id="overview-examples" ${overviewExamples?'checked':''}>包含示例</label>`:''}<span>北京时间 ${dateText(today())}</span></div><div class="overview-grid">${card('近期安排',d.appointments.length,appointments||quiet('未来 7 天没有已记录的安排。收到邀请后，在笔面试记录中添加。'))}${card('复盘行动',d.pendingTasks.length,(d.pendingTasks.slice(0,8).map(x=>taskRow(x.review,x.task,x.index)).join('')||quiet('没有待执行的行动。完成一篇复盘，给下一次准备留下具体动作。'))+(d.pendingTasks.length>8?'<p class="help">展示最早到期的 8 项，其余可在复盘页查看。</p>':''),'<button class="text-button" data-page="reviews">全部复盘 ↗</button>')}${card('等待反馈',d.followups.length,followups||quiet('暂无距最后记录满 7 天的待反馈流程。'))}${card('待补复盘',d.reviewNeeded.length,missing||quiet('暂无待补复盘的已结束轮次。'))}<section class="overview-card wide-card"><div class="section-heading"><h2>流程覆盖与行动进展</h2></div><div class="metrics-grid"><div class="stage-list">${d.stages.map(([label,n])=>`<div class="stage-row"><span>${label}</span><progress value="${n}" max="${d.apps.length||1}" aria-label="${label}"></progress><b>${n}</b></div>`).join('')}</div>${metric('最近已结束轮次的复盘覆盖',d.reviewDone,d.reviewTotal)}${metric('复盘行动完成',d.taskDone,d.taskTotal)}</div><p class="metric-note">阶段按每条流程的历史去重统计，笔试与面试可以交叉或跳过；工作台从收到 HR 反馈后建档，因此这里不代表全部投递的转化率。复盘覆盖按关联流程、轮次和日期核对，草稿不计入。</p></section></div>`;
+}
+
+function render(){
+ $$('.nav-item[data-page]').forEach(el=>{const active=el.dataset.page===page;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
+ $('#jobs-count').textContent=state.jobs.length;$('#apps-count').textContent=state.applications.length;$('#reviews-count').textContent=state.reviews.length;
+ const config={overview:['求职总览','FOCUS ON YOUR NEXT MOVE','今天，把重要的事往前推一步','比较机会、掌握日程，把每次复盘落实为下一次行动。','设置求职偏好'],jobs:['招聘信息选取','FIND YOUR NEXT CHAPTER','找到值得投入的机会','从心动的岗位出发，把每一步求职进展放在一起。','录入岗位'],applications:['笔面试记录','EVERY STEP COUNTS','让每一次进展都有迹可循','从第一封 HR 消息开始，记录邀请、反馈和你的下一步。','新建记录'],reviews:['笔面试复盘','REFLECT, THEN GROW','把每次经历变成下一次底气','回到岗位要求，整理真实问题，让反思落到具体行动。','新建复盘']}[page];
+ $('#breadcrumb').textContent=config[0];$('#eyebrow').textContent=config[1];$('#page-title').innerHTML=esc(config[2])+'<span>。</span>';$('#page-subtitle').textContent=config[3];$('#primary-label').textContent=config[4];
+ const activeApps=state.applications.filter(a=>!CLOSED.includes(a.status));
+ const pendingTasks=state.reviews.flatMap(r=>r.tasks).filter(t=>!t.done).length;
+ const dashboard=decisionRules.dashboard(state,chinaNow(),overviewExamples);
+ const stats=page==='overview' ? [['calendar',dashboard.appointments.length,'项','近期安排 / 待确认'],['notebook',dashboard.reviewNeeded.length,'条','待补复盘'],['check',dashboard.pendingTasks.length,'项','待执行行动']] : page==='jobs' ? [['compass',state.jobs.length,'个','收集的岗位'],['bookmark',state.jobs.filter(j=>j.favorite).length,'个','已收藏的机会'],['layers',activeApps.length,'条','正在推进的流程']] : page==='applications' ? [['layers',activeApps.length,'条','正在推进'],['calendar',state.applications.filter(a=>PENDING.includes(a.status)).length,'场','待笔试 / 待面试'],['check',state.applications.filter(a=>a.status==='已获 Offer').length,'份','已获 Offer']] : [['notebook',state.reviews.length,'篇','复盘笔记'],['check',state.reviews.filter(r=>r.status==='completed').length,'篇','已完成复盘'],['calendar',pendingTasks,'项','待执行的改进行动']];
+ $('#stats').innerHTML=stats.map(([i,n,u,t])=>`<div class="stat"><span class="stat-icon">${icon(i)}</span><div><div class="stat-value">${n}<small>${u}</small></div><div class="stat-caption">${t}</div></div></div>`).join('');
+ $('#demo-notice').hidden=!state.jobs.some(j=>j.demo);
+ renderSyncStatus();
+ if(page==='overview')renderOverview();else if(page==='jobs')renderJobs();else if(page==='applications')renderApps();else renderReviews();
+ if(!storageOK)$('#save-state').textContent='未持久保存 · 请导出备份';
+ hydrate();
+}
+function renderJobs(){
+ const f=filters,cities=[...new Set(state.jobs.map(j=>j.city))].sort((a,b)=>a.localeCompare(b,'zh'));
+ $('#page-content').innerHTML=`<section class="filters" aria-label="岗位筛选"><div class="section-heading"><h2>${icon('sliders')}筛选你的下一站</h2><button type="button" class="text-button" data-action="preferences">求职偏好</button><button class="text-button" data-action="reset-filters">重置筛选</button></div><div class="filter-grid">
+ <label class="field search-field"><span>岗位名称 / 公司 / JD 关键词</span><div class="search-control">${icon('search')}<input id="job-search" data-filter="keyword" value="${esc(f.keyword)}" placeholder="试试「产品」「数据分析」或公司名称" maxlength="200"></div></label>
+ <label class="field"><span>行业</span><select data-filter="industry">${options([...new Set([...INDUSTRIES,...state.jobs.map(j=>j.industry)])],f.industry,'全部行业')}</select></label>
+ <label class="field"><span>工作城市</span><select data-filter="city">${options(cities,f.city,'全部城市')}</select></label>
+ <div class="field"><label for="salary-min">最低薪资（人民币）</label><div class="salary-controls"><input id="salary-min" type="number" min="0" max="1000000" step="1" data-filter="salaryMin" value="${esc(f.salaryMin)}" placeholder="金额不限"><select aria-label="薪资单位" data-filter="salaryUnit"><option value="day" ${f.salaryUnit==='day'?'selected':''}>元/天</option><option value="month" ${f.salaryUnit==='month'?'selected':''}>元/月</option></select></div></div>
+ <label class="field"><span>信息来源类型</span><select data-filter="sourceType"><option value="">全部来源类型</option>${options(['公司官网','招聘 App'],f.sourceType)}</select></label>
+ <label class="field"><span>具体信息来源</span><select data-filter="source">${options(SOURCES,f.source,'全部来源')}</select></label>
+ <label class="field"><span>企业总部所在地</span><select data-filter="hqRegion">${options(['中国','海外'],f.hqRegion,'中国与海外')}</select></label></div>
+ <div class="filter-note"><label class="check"><input type="checkbox" data-filter="negotiable" ${f.negotiable?'checked':''}>设定薪资门槛时，同时包含面议岗位</label></div></section>
+ <div class="results-bar"><div class="view-tabs" role="group" aria-label="岗位范围">${[['all','全部机会'],['favorites','我的收藏'],['applied','已有流程']].map(([id,label])=>`<button class="view-tab ${f.tab===id?'active':''}" data-action="job-tab" data-value="${id}" aria-pressed="${f.tab===id}">${label}<small id="count-${id}"></small></button>`).join('')}</div><select class="sort-control" aria-label="岗位排序" data-filter="sort"><option value="new" ${f.sort==='new'?'selected':''}>最近更新优先</option><option value="salary" ${f.sort==='salary'?'selected':''}>薪资最高优先</option><option value="priority" ${f.sort==='priority'?'selected':''}>条件匹配优先</option></select></div>
+ <div id="job-results" aria-live="polite"></div><div class="mobile-data-actions"><button class="text-button" data-action="source-directory">${icon('external')}公司招聘官网入口</button><button class="text-button" data-action="export">${icon('download')}导出备份</button><button class="text-button" data-action="import">${icon('upload')}导入数据</button><button class="text-button" data-action="help">使用说明</button></div>`;
+ renderJobResults();
+}
+function filteredJobs(ignoreTab=false){const f=filters,query=f.keyword.trim().toLowerCase();return state.jobs.filter(j=>{
+ if(query && !`${j.title} ${j.company} ${j.jd} ${j.tags.join(' ')}`.toLowerCase().includes(query))return false;
+ if(f.industry&&j.industry!==f.industry || f.city&&j.city!==f.city || f.source&&j.source!==f.source || f.hqRegion&&j.hqRegion!==f.hqRegion)return false;
+ if(f.sourceType&& (j.source==='公司官网'?'公司官网':'招聘 App')!==f.sourceType)return false;
+ if(f.salaryMin!==''&&Number(f.salaryMin)>0){if(!j.salaryMin){if(!f.negotiable)return false;}else if(j.salaryUnit!==f.salaryUnit||j.salaryMin<Number(f.salaryMin))return false;}
+ if(!ignoreTab&&f.tab==='favorites'&&!j.favorite)return false;
+ if(!ignoreTab&&f.tab==='applied'&&!appForJob(j.id))return false;
+ return true;
+ });}
+function renderJobResults(){
+ const base=filteredJobs(true),jobs=filteredJobs();
+ jobs.sort((a,b)=>filters.sort==='priority' ? decisionRules.compare(a,b,profile()) : filters.sort==='salary' ? salaryPerDay(b)-salaryPerDay(a) : b.updatedAt.localeCompare(a.updatedAt));
+ $('#count-all').textContent=base.length;$('#count-favorites').textContent=base.filter(j=>j.favorite).length;$('#count-applied').textContent=base.filter(j=>appForJob(j.id)).length;
+ $('#job-results').innerHTML=jobs.length?`${filters.sort==='priority'?`<p class="priority-note">${profile().enabled?'按条件匹配分排序；可在卡片查看依据，官网已关闭的岗位排在最后。':'尚未启用求职偏好，暂按最近更新排序，已关闭岗位排后。请先设置求职偏好。'}</p>`:''}<div class="job-grid">${jobs.map(jobCard).join('')}</div>${filters.sort==='salary'?'<p class="inline-memo">排序时，月薪按 21.75 个工作日折算为日薪，仅用于排序；薪资筛选严格区分元/天与元/月。</p>':''}`:empty('暂时没有匹配的机会','可以调整筛选条件，或先录入一个你感兴趣的岗位。');
+}
+function salaryPerDay(j){return j.salaryMin ? j.salaryMin/(j.salaryUnit==='month'?21.75:1):0;}
+function jobCard(j){const app=appForJob(j.id);return `<article class="job-card"><div class="company-row">${companyLogo(j)}<div class="company-meta"><div class="company-name">${esc(j.company)}</div><div class="company-hq">${esc(j.industry)} · 总部${esc(j.hqRegion)}</div></div><button class="icon-button ${j.favorite?'saved':''}" aria-label="${j.favorite?'取消收藏':'收藏'} ${esc(j.title)}" aria-pressed="${j.favorite}" data-action="favorite" data-id="${esc(j.id)}">${icon('bookmark')}</button></div>
+ <button class="job-title" data-action="job-detail" data-id="${esc(j.id)}">${esc(j.title)}</button><div class="job-subline"><span>${esc(j.city)}</span><span class="divider">|</span><span>${j.days?'每周 '+esc(j.days)+' 天':'出勤待确认'}</span><span class="divider">|</span><span>${j.months?esc(j.months)+' 个月起':'时长待确认'}</span><span class="salary">${salaryText(j)}</span></div>
+ <div class="tags">${j.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}${j.demo?'<span class="tag demo">示例</span>':''}${syncBadge(j)}${app?badge(app.status):''}</div>${matchHTML(j)}<div class="job-footer"><span class="source"><span class="source-dot"></span>${esc(j.source)}</span><button class="text-button" data-action="job-detail" data-id="${esc(j.id)}">查看岗位 ${icon('arrow')}</button></div></article>`;}
+function renderApps(){
+ const counts=status=>state.applications.filter(a=>status==='all'||status==='active'&&!CLOSED.includes(a.status)||a.status===status).length;
+ $('#page-content').innerHTML=`<div class="flow-strip" role="group" aria-label="流程状态">${[['all','全部流程'],['active','推进中'],['已获 Offer','已获 Offer'],['已拒绝','已拒绝'],['已撤回','已撤回']].map(([s,t])=>`<button class="flow-pill ${appFilter.status===s?'active':''}" aria-pressed="${appFilter.status===s}" data-action="app-filter" data-value="${s}">${t}<b>${counts(s)}</b></button>`).join('')}</div><div class="toolbar"><div class="search-control">${icon('search')}<input class="input" id="app-search" aria-label="搜索流程记录" value="${esc(appFilter.keyword)}" placeholder="搜索岗位、公司或轮次" maxlength="200"></div><span class="help">每条流程都关联一份原始 JD</span></div><div id="app-results" aria-live="polite"></div>`;
+ renderAppResults();
+}
+function renderAppResults(){
+ const q=appFilter.keyword.toLowerCase().trim();const apps=state.applications.filter(a=>{const j=getJob(a.jobId);return (!q||`${j.company} ${j.title} ${a.round}`.toLowerCase().includes(q))&&(appFilter.status==='all'||appFilter.status==='active'&&!CLOSED.includes(a.status)||a.status===appFilter.status);}).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));
+ $('#app-results').innerHTML=apps.length?`<div class="table-wrap"><table class="record-table"><thead><tr><th>岗位 / 公司</th><th>当前进展</th><th>下一场安排</th><th>操作</th></tr></thead><tbody>${apps.map(a=>{const j=getJob(a.jobId);return `<tr><td><div class="record-company">${companyLogo(j)}<div><button class="record-title" data-action="app-detail" data-id="${esc(a.id)}">${esc(a.jdSnapshot.title)}</button><div class="record-sub">${esc(a.jdSnapshot.company)} · 投递 ${dateText(a.appliedAt)}${a.demo?' · 示例':''}</div></div></div></td><td>${badge(a.status)}<span class="subtext">${esc(a.round||'轮次未填写')}</span></td><td>${scheduleHTML(a)}</td><td><div class="table-actions"><button class="text-button" data-action="update-app" data-id="${esc(a.id)}">更新进度</button><button class="text-button" data-action="review-app" data-id="${esc(a.id)}">去复盘</button></div></td></tr>`;}).join('')}</tbody></table></div>`:empty('这里等候你的第一条进展','收到 HR 的拒绝、笔试或面试邀请后，新建记录并关联岗位。','add-app','新建流程记录');
+}
+function scheduleHTML(a){if(!PENDING.includes(a.status))return '<span class="subtext">等待反馈或流程已结束</span>';if(!a.scheduledAt)return '<span class="subtext">时间待确认</span>';const overdue=a.scheduledAt<chinaNow();return `<span class="date-label ${overdue?'overdue':''}">${dateText(a.scheduledAt,true)}</span><span class="subtext">${a.status==='待笔试'?'笔试截止':'面试时间'}${overdue?' · 时间已过，请更新进度':''} · 北京时间</span>`;}
+function renderReviews(){
+ $('#page-content').innerHTML=`<div class="results-bar"><div class="view-tabs" role="group" aria-label="复盘状态">${[['all','全部复盘'],['completed','已完成'],['draft','草稿箱']].map(([s,t])=>`<button class="view-tab ${reviewFilter.status===s?'active':''}" aria-pressed="${reviewFilter.status===s}" data-action="review-filter" data-value="${s}">${t}<small>${state.reviews.filter(r=>s==='all'||r.status===s).length}</small></button>`).join('')}</div></div><div class="toolbar"><div class="search-control">${icon('search')}<input class="input" id="review-search" aria-label="搜索复盘" value="${esc(reviewFilter.keyword)}" placeholder="搜索公司、岗位或复盘内容" maxlength="200"></div><select class="input" id="review-kind-filter" aria-label="复盘类型">${options(KINDS,reviewFilter.kind,'全部复盘类型')}</select><label class="check"><input type="checkbox" id="review-pending" ${reviewFilter.pending?'checked':''}>有待执行行动</label></div><div id="review-results" aria-live="polite"></div><div class="template-note"><strong>复盘不止于「哪里没答好」</strong>对照 JD 看考察目标，记录原题和追问，用具体证据评估表达，再给下次练习留一个能执行的动作。</div>`;
+ renderReviewResults();
+}
+function renderReviewResults(){
+ const f=reviewFilter,q=f.keyword.trim().toLowerCase();const reviews=state.reviews.filter(r=>{const j=r.jdSnapshot;return (f.status==='all'||r.status===f.status)&&(!f.kind||r.kind===f.kind)&&(!f.pending||r.tasks.some(t=>!t.done))&&(!q||`${j.company} ${j.title} ${r.context} ${r.questions} ${r.gaps}`.toLowerCase().includes(q));}).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));
+ $('#review-results').innerHTML=reviews.length?`<div class="review-list">${reviews.map(r=>`<article class="review-card"><div class="review-card-top"><span class="badge ${r.status==='completed'?'green':'gray'}">${r.status==='completed'?'已完成':'草稿'}</span><span class="help">${dateText(r.date)}${r.demo?' · 示例':''}</span></div><div class="review-company">${esc(r.jdSnapshot.company)} · ${esc(r.kind)}${r.round?' / '+esc(r.round):''}</div><h3><button class="record-title" style="font-size:inherit" data-action="review-detail" data-id="${esc(r.id)}">${esc(r.jdSnapshot.title)}</button></h3><p class="review-excerpt">${esc(r.gaps||r.context||'先留下线索，稍后继续完善这次复盘。')}</p><div class="review-card-footer"><span class="action-count">改进行动 ${r.tasks.filter(t=>t.done).length} / ${r.tasks.length} 已完成</span><button class="text-button" data-action="review-detail" data-id="${esc(r.id)}">打开复盘 ${icon('arrow')}</button></div></article>`).join('')}</div>`:empty('给下一次的自己留些线索','选择一个岗位，记录题目、思考与下一步改进。','add-review','写下第一篇复盘');
+}
+function navigate(next){if(!['overview','jobs','applications','reviews'].includes(next))return;page=next;location.hash=next;render();}
+function showEditor(title,body,footer,context,wide=false){
+ const d=$('#editor');if(d.open)d.close();returnFocus=document.activeElement;editorContext=context;$('#modal-title').textContent=title;$('#modal-body').innerHTML=body;$('#modal-footer').innerHTML=footer;d.classList.toggle('wide',wide);$('#modal-eyebrow').textContent=context.type==='job'?'YOUR NEXT OPPORTUNITY':context.type==='app'?'EVERY STEP COUNTS':context.type==='review'?'REFLECT, THEN GROW':'CAREER WORKSPACE';hydrate(d);d.showModal();
+}
+const field=(name,label,value='',type='text',extra='')=>`<label class="field"><span>${label}</span><input type="${type}" name="${name}" value="${esc(value)}" ${extra}></label>`;
+const cancelFooter='<button type="button" class="button" data-action="close-editor">取消</button>';
+function openJobForm(id){
+ const j=getJob(id)||{company:'',title:'',industry:INDUSTRIES[0],city:'',source:SOURCES[0],hqRegion:'中国',hqAddress:'',salaryMin:'',salaryMax:'',salaryUnit:'day',tags:[],days:'',months:'',jd:'',url:''};
+ showEditor(id?'编辑岗位档案':'录入一个心动的岗位',`<div class="form-grid">${field('title','岗位名称 <span class="required">*</span>',j.title,'text','required maxlength="120" placeholder="如：产品策划实习生"')}${field('company','公司名称 <span class="required">*</span>',j.company,'text','required maxlength="100" placeholder="公司全称或常用名称"')}
+ <label class="field"><span>行业</span><select name="industry">${options([...new Set([...INDUSTRIES,j.industry])],j.industry)}</select></label>${field('city','工作城市 <span class="required">*</span>',j.city,'text','required maxlength="50" placeholder="如：上海 / 远程"')}
+ <label class="field"><span>信息来源</span><select name="source">${options(SOURCES,j.source)}</select></label><label class="field"><span>企业总部所在地</span><select name="hqRegion">${options(['中国','海外'],j.hqRegion)}</select></label>
+ ${field('hqAddress','总部地址',j.hqAddress,'text','maxlength="200" placeholder="如：中国 · 深圳 / 美国 · 纽约"')}${field('url','原始岗位链接',j.url,'url','maxlength="2000" placeholder="粘贴职位链接，便于返回原文"')}
+ <div class="field full"><span>薪资范围（人民币，可留空表示面议）</span><div class="salary-form"><input name="salaryMin" type="number" min="1" max="1000000" step="1" value="${j.salaryMin||''}" aria-label="薪资下限" placeholder="最低"><span>—</span><input name="salaryMax" type="number" min="1" max="1000000" step="1" value="${j.salaryMax||''}" aria-label="薪资上限" placeholder="最高"><select name="salaryUnit" aria-label="薪资单位"><option value="day" ${j.salaryUnit==='day'?'selected':''}>元 / 天</option><option value="month" ${j.salaryUnit==='month'?'selected':''}>元 / 月</option></select></div></div>
+ ${field('days','每周出勤天数',j.days||'','number','min="1" max="7" step="1" placeholder="如：4"')}${field('months','最短实习时长（月）',j.months||'','number','min="1" max="36" step="1" placeholder="如：3"')}
+ <label class="field full"><span>岗位标签</span><input name="tags" value="${esc(j.tags.join('，'))}" maxlength="300" placeholder="如：SQL，数据分析，用户研究（用逗号分隔）"></label>
+ <label class="field full"><span>岗位描述 / JD <span class="required">*</span></span><textarea name="jd" required maxlength="30000" rows="8" placeholder="粘贴完整岗位描述，建议包含岗位职责、任职要求、出勤与实习时长。">${esc(j.jd)}</textarea><span class="help">保存原文以便筛选、记录和复盘引用。更新岗位后，已有流程和复盘的 JD 快照仍保留原版本。</span></label></div><p class="form-message" id="form-error" role="alert"></p>`,cancelFooter+'<button class="button primary" type="submit">保存岗位</button>',{type:'job',id});
+}
+function jobSelect(selected,name='jobId'){return `<label class="field full"><span>关联岗位 <span class="required">*</span></span><select name="${name}" required><option value="">选择已收集的岗位</option>${state.jobs.map(j=>`<option value="${esc(j.id)}" ${j.id===selected?'selected':''}>${esc(j.company)} · ${esc(j.title)}${j.demo?'（示例）':''}</option>`).join('')}</select></label>`;}
+function openAppForm(id,jobId){
+ const a=getApp(id);if(!a&&jobId&&appForJob(jobId)){openAppForm(appForJob(jobId).id);return;}
+ if(!state.jobs.length){toast('先录入一个岗位，再创建关联记录');openJobForm();return;}
+ const status=a?a.status:'待面试';
+ showEditor(a?'更新笔面试进度':'记录第一条 HR 反馈',`<div class="form-grid">${a?`<div class="field full"><span>关联岗位</span><strong>${esc(a.jdSnapshot.company)} · ${esc(a.jdSnapshot.title)}</strong><span class="help">本条流程持续关联创建时的 JD 快照。</span></div>`:jobSelect(jobId)}
+ <label class="field"><span>${a?'更新后的进展':'收到的反馈'} <span class="required">*</span></span><select name="status" id="event-status">${options(STATUSES,status)}</select></label>${field('round','轮次 / 环节',a?.round||'','text','maxlength="100" placeholder="如：在线测评 / 业务一面 / HR 面"')}
+ ${field('eventAt','收到通知 / 更新的时间（北京时间）',chinaNow(),'datetime-local','required')}${field('scheduledAt','<span id="schedule-label">面试时间（北京时间）</span>',a?.scheduledAt||'','datetime-local','id="schedule-input"')}
+ <label class="field"><span>反馈渠道</span><select name="channel">${options(['邮件','招聘平台','电话','微信','短信','自行更新','其他'],'邮件')}</select></label>${field('hrName','HR / 联系人',a?.hrName||'','text','maxlength="100" placeholder="可选"')}
+ ${a?'':field('appliedAt','最初投递日期',today(),'date','required')}
+ <label class="field full"><span>通知内容 / 本次进展</span><textarea name="notes" maxlength="12000" rows="4" placeholder="记录 HR 原话、笔试说明、面试形式、需准备的资料等。"></textarea></label></div><p class="inline-memo">收到拒绝也可以直接创建记录。后续每次更新会追加到时间线；日程仅在本页面展示。</p><p class="form-message" id="form-error" role="alert"></p>`,cancelFooter+`<button class="button primary" type="submit">${a?'更新进度':'创建记录'}</button>`,{type:'app',id,jobId});
+ updateScheduleField();
+}
+function updateScheduleField(){const status=$('#event-status')?.value;if(!status)return;const input=$('#schedule-input');input.disabled=!PENDING.includes(status);$('#schedule-label').textContent=status==='待笔试'?'笔试截止时间（北京时间）':status==='待面试'?'面试时间（北京时间）':'当前状态无需日程';if(input.disabled)input.value='';}
+const PROMPTS={
+ '笔试':[['考试形式与考察目标','限时多久？题型、工具限制、岗位要求分别是什么？'],['题目、解法与时间分配','尽量还原原题；记录你的思路、边界条件、耗时与未完成的部分。'],['有效的方法与证据','哪些题型做得顺？为什么这条解题路径有效？如何验证答案？'],['失分点与知识缺口','区分知识不会、读题误解、实现错误和时间分配问题；有无错题证据？'],['反问与岗位判断','考试内容与 JD 是否一致？哪些内容需要向 HR 确认？']],
+ '业务面':[['面试背景与岗位目标','面试官关心哪些业务问题？这个岗位的核心产出是什么？'],['问题、追问与当时回答','还原项目追问、业务案例和开放题；记录当时的回答结构。'],['有效表达与项目证据','用 STAR 回看：情境、任务、你的行动和结果是否清楚？有量化证据吗？'],['卡点与业务理解缺口','是否先澄清目标、用户与约束？遗漏了哪些指标、方案取舍或验证步骤？'],['反问与岗位判断','团队目标、实习生职责、评价标准和成长空间是否清楚？']],
+ '技术面':[['技术场景与考察范围','基础知识、算法、系统设计、项目深挖各占多少？与你的 JD 哪些要求对应？'],['技术题、追问与实现','还原题目和输入输出；记录复杂度、边界条件、代码思路和追问。'],['正确思路与验证证据','哪些解释有原理支撑？是否用测试、测量数据或实际项目验证？'],['原理盲点与工程取舍','区分记忆结论与理解机制；有哪些性能、稳定性和维护成本的取舍？'],['反问与岗位判断','技术栈、代码审查、协作方式、上线流程和实习生职责是什么？']],
+ 'HR 面':[['沟通目标与个人约束','求职动机、入职时间、出勤天数、实习时长与地点是否匹配？'],['问题与回答内容','记录动机、离职原因、协作冲突、薪资及其他机会的提问。'],['一致性与可信证据','简历、项目经历和口头表达是否一致？哪些例子体现责任与协作？'],['表达与匹配度缺口','哪些回答模糊或缺少证据？哪些是条件不匹配，需要确认而不是猜测？'],['反问与岗位判断','确认薪资口径、合同主体、办公地点、工作安排与后续流程。']],
+ '拒绝复盘':[['已知事实与流程阶段','在哪个环节收到拒绝？HR 是否给出明确理由？把事实和推测分开。'],['已有反馈与关键问题','原样记录可确认的反馈；没有反馈时，不推断公司内部决定。'],['本次有效准备','有哪些经验可以复用？哪些表达或材料有充分证据支持？'],['可控改进与待确认项','哪些能力和表达可提升？哪些属于岗位、时间或名额匹配问题？'],['岗位判断与后续选择','这个方向仍然值得投入吗？下一次岗位筛选要增加什么条件？']],
+ '综合复盘':[['流程背景与岗位要求','这次经历发生在哪个阶段？JD 里最重要的三项能力是什么？'],['题目、反馈与关键片段','记录能够还原事实的问题、追问、反馈与当时的回答。'],['做得有效的部分','哪些准备和表达值得继续？用具体例子或结果支撑。'],['差距与根本原因','当前表现与岗位要求差在哪里？区分能力、表达和匹配度。'],['反问与岗位判断','还需要确认什么？这次经历是否改变了你对岗位的判断？']]
+};
+function suggestedFocus(j){
+ const text=(j.jd+' '+j.title+' '+j.tags.join(' ')).toLowerCase(),tips=[];
+ if(/sql|数据|统计|指标|a\/b/.test(text))tips.push('数据与分析：指标定义、SQL 解题、异常归因和实验验证。');
+ if(/产品|需求|用户|原型/.test(text))tips.push('产品与用户：需求证据、优先级、方案取舍和上线效果。');
+ if(/开发|工程|react|vue|javascript|算法|编程/.test(text))tips.push('技术与工程：原理、边界条件、复杂度和项目验证。');
+ if(/营销|品牌|市场|消费者/.test(text))tips.push('市场与品牌：目标人群、洞察证据、活动策略和效果衡量。');
+ if(/英语|英文|english/.test(text))tips.push('语言与沟通：能否用英语清晰介绍经历并回答追问。');
+ tips.push('岗位匹配：出勤、实习时长、团队期待与自己的投入是否一致。');return tips.slice(0,4);
+}
+function openReviewForm(id,jobId,applicationId){
+ const r=getReview(id),a=getApp(applicationId||r?.applicationId);jobId=r?.jobId||a?.jobId||jobId;
+ if(!state.jobs.length){toast('先录入岗位，再对照 JD 复盘');openJobForm();return;}
+ const kind=r?.kind||(a?.status==='已拒绝'?'拒绝复盘':a?.status.includes('笔试')?'笔试':'业务面');
+ showEditor(r?'继续整理这次复盘':'给下一次的自己留些线索',`<div class="form-grid">${r?`<div class="field full"><span>关联岗位</span><strong>${esc(r.jdSnapshot.company)} · ${esc(r.jdSnapshot.title)}</strong><span class="help">已保留复盘创建时引用的 JD，编辑内容不会替换快照。</span></div>`:jobSelect(jobId)}<label class="field"><span>复盘类型</span><select name="kind" id="review-kind">${options(KINDS,kind)}</select></label>${field('date','笔试 / 面试发生日期',r?.date||today(),'date','required')}${field('round','轮次 / 环节',r?.round||a?.round||'','text','maxlength="100" placeholder="如：技术二面"')}<div class="field"><span>关联流程</span><div class="help" id="review-app-label">${a?esc(a.status+' · '+a.round):'所选岗位如有流程记录，将自动关联；也可独立复盘。'}</div></div></div>
+ <div id="review-context"></div><div id="review-fields"></div><div class="review-group"><label for="review-actions">下次可执行的行动</label><div class="review-prompt">每行写一个具体动作，例如「计时 20 分钟重做窗口函数错题」，保存后可逐项勾选。</div><textarea id="review-actions" name="actions" maxlength="12000" rows="4" placeholder="尽量包含练习对象、方法和完成标准">${esc(r?.tasks.map(t=>t.text).join('\n')||'')}</textarea></div><p class="form-message" id="form-error" role="alert"></p>`,cancelFooter+'<button class="button" type="submit" name="saveMode" value="draft">保存草稿</button><button class="button primary" type="submit" name="saveMode" value="completed">完成复盘</button>',{type:'review',id,jobId,applicationId:a?.id||''},true);
+ $('#review-fields').innerHTML=REVIEW_FIELDS.map((name,i)=>`<div class="review-group"><label for="review-${name}" id="label-${name}">${PROMPTS[kind][i][0]}</label><div class="review-prompt" id="prompt-${name}">${PROMPTS[kind][i][1]}</div><textarea id="review-${name}" name="${name}" maxlength="12000" rows="4">${esc(r?.[name]||'')}</textarea></div>`).join('');
+ updateReviewPrompts();updateReviewContext();
+}
+function updateReviewPrompts(){const kind=$('#review-kind').value;REVIEW_FIELDS.forEach((n,i)=>{$('#label-'+n).textContent=PROMPTS[kind][i][0];$('#prompt-'+n).textContent=PROMPTS[kind][i][1];});}
+function updateReviewContext(){
+ const c=editorContext,r=getReview(c.id),jobId=r?.jobId||$('[name="jobId"]',$('#editor-form'))?.value||c.jobId;
+ const a=r?getApp(r.applicationId):getApp(c.applicationId)||appForJob(jobId),j=r?.jdSnapshot||a?.jdSnapshot||getJob(jobId);
+ $('#review-context').innerHTML=j?`<div class="review-jd-context"><strong>对照这份 JD，可以留意</strong>${suggestedFocus(j).map(t=>`<div>· ${esc(t)}</div>`).join('')}<div class="help">${a?'引用关联流程创建时的 JD 快照':'引用当前岗位 JD，保存时会留存快照'}</div><details style="margin-top:8px"><summary>展开岗位描述</summary><p class="prose">${esc(j.jd)}</p></details></div>`:'';
+ $('#review-app-label').textContent=a?`${a.status} · ${a.round||'轮次未填写'}`:'此岗位暂无流程记录，将独立保存关联 JD 的复盘。';
+}
+function showDetail(label,content,context){const d=$('#detail');if(d.open)d.close();returnFocus=document.activeElement;$('#detail-label').textContent=label;$('#detail-content').innerHTML=content;detailContext=context;hydrate(d);d.showModal();}
+function snapshotHTML(j,caption='记录时的岗位描述 / JD 快照'){return `<details class="snapshot"><summary>${esc(caption)} · ${esc(j.company)} / ${esc(j.title)}</summary><p class="help">${esc(j.city)} · ${salaryText(j)} · ${esc(j.source)} · 总部${esc(j.hqRegion)}</p><div class="prose">${esc(j.jd)}</div>${safeURL(j.url)?`<p class="help"><a class="source-link" target="_blank" rel="noopener noreferrer" href="${esc(safeURL(j.url))}">${j.demo?'演示来源入口':'打开记录时的岗位链接'} ↗</a></p>`:''}</details>`;}
+function openJobDetail(id){const j=getJob(id);if(!j)return;const a=appForJob(id),reviews=state.reviews.filter(r=>r.jobId===id);
+ showDetail('OPPORTUNITY DETAILS',`<div class="detail-body"><div class="company-row">${companyLogo(j)}<div><div class="company-name">${esc(j.company)}</div><div class="company-hq">${esc(j.industry)}${j.demo?' · 示例岗位':''}</div></div><button class="icon-button ${j.favorite?'saved':''}" aria-label="${j.favorite?'取消收藏':'收藏'}" aria-pressed="${j.favorite}" data-action="favorite" data-id="${esc(id)}">${icon('bookmark')}</button></div><h2>${esc(j.title)}</h2><div class="detail-sub"><span>${esc(j.city)}</span><span class="salary">${salaryText(j)}</span><span>${j.days?'每周 '+esc(j.days)+' 天':'出勤待确认'}</span><span>${j.months?esc(j.months)+' 个月起':'时长待确认'}</span></div><div class="tag-list">${j.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><div class="detail-actions"><button class="button primary" data-action="${a?'update-app':'new-job-app'}" data-id="${esc(a?.id||id)}">${icon('layers')}${a?'更新进度':'收到反馈，建记录'}</button><button class="button" data-action="review-job" data-id="${esc(id)}">${icon('notebook')}写复盘</button><button class="button subtle" data-action="edit-job" data-id="${esc(id)}">编辑岗位</button></div>${j.demo?'<div class="notice">此岗位为虚构示例，职位内容、薪资与流程均不代表真实招聘。</div>':''}<dl class="meta-grid"><div><dt>信息来源</dt><dd>${esc(j.source)}${safeURL(j.url)?` · <a class="source-link" href="${esc(safeURL(j.url))}" target="_blank" rel="noopener noreferrer">${j.demo?'平台 / 官网入口':'原始岗位链接'} ↗</a>`:''}</dd></div><div><dt>企业总部</dt><dd>${esc(j.hqRegion)}${j.hqAddress?' · '+esc(j.hqAddress):''}</dd></div></dl><section class="detail-section"><h3>岗位条件与我的偏好</h3>${matchHTML(j,true)}</section><section class="detail-section"><h3>岗位描述 / JD</h3><p>${esc(j.jd)}</p></section><section class="detail-section"><h3>关联流程${a?' '+badge(a.status):''}</h3>${a?`<button class="text-button" data-action="app-detail" data-id="${esc(a.id)}">查看完整进展与记录时 JD ${icon('arrow')}</button>`:'<p>收到 HR 反馈后，在这里建立第一条记录。</p>'}</section><section class="detail-section"><h3>关联复盘 <span class="help">${reviews.length} 篇</span></h3>${reviews.length?reviews.map(r=>`<div class="link-row"><button class="text-button" data-action="review-detail" data-id="${esc(r.id)}">${esc(r.kind)} · ${dateText(r.date)} · ${r.status==='draft'?'草稿':'已完成'} ${icon('arrow')}</button></div>`).join(''):'<p>还没有复盘，结束一场笔试或面试后再来记录。</p>'}</section></div>`,{type:'job',id});
+}
+function openAppDetail(id){const a=getApp(id);if(!a)return;const j=a.jdSnapshot;
+ showDetail('APPLICATION TIMELINE',`<div class="detail-body"><div class="company-row">${companyLogo(j)}<div><div class="company-name">${esc(j.company)}</div><div class="company-hq">投递于 ${dateText(a.appliedAt)}${a.demo?' · 示例流程':''}</div></div></div><h2>${esc(j.title)}</h2><div class="detail-sub">${badge(a.status)}<span>${esc(a.round)}</span></div><div class="detail-actions"><button class="button primary" data-action="update-app" data-id="${esc(id)}">${icon('plus')}更新进度</button><button class="button" data-action="review-app" data-id="${esc(id)}">写复盘</button><button class="button subtle" data-action="job-detail" data-id="${esc(a.jobId)}">当前岗位档案</button></div><section class="detail-section"><h3>下一步安排</h3>${scheduleHTML(a)}${a.hrName?`<p style="margin-top:10px">联系人：${esc(a.hrName)}</p>`:''}</section><section class="detail-section"><h3>流程时间线</h3><div class="timeline">${a.events.slice().sort((x,y)=>y.eventAt.localeCompare(x.eventAt)||a.events.indexOf(y)-a.events.indexOf(x)).map(ev=>`<div class="timeline-item"><div class="timeline-title">${badge(ev.status)}<span>${esc(ev.round)}</span><small>${dateText(ev.eventAt,true)}</small></div><p>${esc(ev.notes||'已更新流程状态。')}</p>${ev.scheduledAt?`<span class="subtext">${ev.status==='待笔试'?'截止':'安排'}：${dateText(ev.scheduledAt,true)} · 北京时间</span>`:''}<span class="subtext">${esc(ev.channel)}</span></div>`).join('')}</div></section><section class="detail-section">${snapshotHTML(j)}</section><section class="detail-section"><h3>这条流程的复盘</h3>${state.reviews.filter(r=>r.applicationId===id).map(r=>`<div class="link-row"><button class="text-button" data-action="review-detail" data-id="${esc(r.id)}">${esc(r.kind)} · ${esc(r.round)} · ${dateText(r.date)} ${icon('arrow')}</button></div>`).join('')||'<p>还没有关联复盘。</p>'}</section></div>`,{type:'app',id});
+}
+function openReviewDetail(id){const r=getReview(id);if(!r)return;const j=r.jdSnapshot,labels=PROMPTS[r.kind];
+ showDetail('REFLECTION NOTES',`<div class="detail-body"><div class="review-status"><span class="badge ${r.status==='completed'?'green':'gray'}">${r.status==='completed'?'已完成复盘':'草稿'}</span><span class="help">${dateText(r.date)} · ${esc(r.kind)}${r.demo?' · 示例':''}</span></div><h2 style="margin-top:17px">${esc(j.title)}</h2><div class="detail-sub"><span>${esc(j.company)}</span><span>${esc(r.round)}</span></div><div class="detail-actions"><button class="button primary" data-action="edit-review" data-id="${esc(id)}">继续编辑</button><button class="button" data-action="job-detail" data-id="${esc(r.jobId)}">当前岗位档案</button>${r.applicationId?`<button class="button subtle" data-action="app-detail" data-id="${esc(r.applicationId)}">关联流程</button>`:''}</div>${REVIEW_FIELDS.map((f,i)=>`<section class="detail-section"><h3>${labels[i][0]}</h3><p>${esc(r[f]||'暂未填写')}</p></section>`).join('')}<section class="detail-section"><h3>下次可执行的行动 <span class="help">${r.tasks.filter(t=>t.done).length} / ${r.tasks.length}</span></h3><div class="task-list">${r.tasks.map((t,i)=>taskRow(r,t,i)).join('')||'<p class="prose">还没有添加行动项。</p>'}</div></section><section class="detail-section">${snapshotHTML(j,'本次复盘引用的 JD 快照')}</section></div>`,{type:'review',id});
+}
+function openHelp(){showEditor('让机会、进展和复盘连在一起',`<div class="help-block"><h3>00 · 从求职总览开始</h3><p>设置城市、岗位关键词与可投入时间，查看有依据的条件评分。求职总览集中展示未来 7 天及逾期安排、满 7 天的待反馈流程、待补复盘与有期限的改进行动。此展示版默认包含明确标注的虚构示例，便于体验完整流程。</p><h3>01 · 收集值得投入的岗位</h3><p>从下面的平台或公司官网找到机会，保存原链接，粘贴 JD 并补充城市、薪资、行业与总部所在地。你可以按这些条件筛选，收藏关注的岗位。</p><div class="source-list">${SOURCES.map(s=>`<span class="tag">${s}</span>`).join('')}</div><h3>02 · 收到反馈后，建立流程记录</h3><p>拒绝、笔试邀请、面试邀请都可以作为第一条记录。同一岗位保持一条流程，每次更新追加到时间线；不同轮次的时间和 HR 消息都能保留。</p><h3>03 · 对照 JD，复盘并行动</h3><p>选择笔试、业务面、技术面、HR 面或拒绝复盘；系统会提供对应侧重点，并按 JD 关键词提示关注方向。每行改进行动都能在复盘详情中勾选。</p><h3>岗位与快照如何关联？</h3><p>每个流程和复盘都保存岗位 ID，并留存创建时引用的完整 JD。由已有流程创建的复盘优先引用该流程的快照，因此之后编辑机会库也能找回当时的岗位要求。</p><h3>数据与招聘来源</h3><p>这是公开的作品演示，默认岗位、流程和复盘全部为虚构示例，不代表企业实际招聘。可手动录入岗位，也可通过公司招聘官网入口检索。公开演示未连接自动招聘采集服务。</p><p>数据保存在当前浏览器，未上传到服务器。换浏览器、换设备、清理浏览器数据后不会自动同步，请定期导出 JSON 备份。导入会替换当前数据。日程使用北京时间，仅在页面内展示，不发送通知。</p><p>页面无需登录即可体验。填写和修改的数据仅保存在访问者自己的浏览器中，不会共享给项目作者或其他访问者。</p></div>`,`<button type="button" class="button primary" data-action="close-editor">开始使用</button>`,{type:'help'});}
+function closeEditor(){if($('#editor').open)$('#editor').close();editorContext=null;}
+function closeDetail(){if($('#detail').open)$('#detail').close();detailContext=null;}
+function formError(message){$('#form-error').textContent=message;$('#form-error').scrollIntoView({block:'nearest'});}
+function handleSubmit(event){
+ event.preventDefault();const c=editorContext;if(!c||c.type==='help')return;
+ const form=$('#editor-form');if(!form.reportValidity())return;const fd=new FormData(form),v=name=>String(fd.get(name)||'').trim(),now=timestamp();
+ if(c.type==='preferences'){
+  const split=value=>[...new Set(value.split(/[,，、\n]/).map(x=>x.trim()).filter(Boolean))];
+  try{const p=decisionRules.preferences({enabled:fd.get('enabled')==='on',cities:split(v('cities')),roles:split(v('roles')),days:Number(v('availableDays')),months:Number(v('availableMonths'))});if(p.enabled&&!p.cities.length&&!p.roles.length&&!p.days&&!p.months)return formError('请至少设置一项比较条件，或关闭条件评分。');state.preferences=p;}catch(error){return formError(error.message+'；最多 20 个城市或关键词，每项不超过 50 字。');}
+  if(state.preferences.enabled)filters.sort='priority';closeEditor();commit();if(detailContext?.type==='job')openJobDetail(detailContext.id);savedMessage('求职偏好已保存');
+ }else if(c.type==='task-plan'){
+  const r=getReview(c.id),t=r?.tasks[c.index];if(!t)return formError('行动项已不存在，请重新打开复盘。');
+  if(v('dueDate')&&!validDate(v('dueDate')))return formError('请填写有效的完成日期。');
+  t.dueDate=v('dueDate');r.updatedAt=now;closeEditor();commit();if(detailContext?.type==='review')openReviewDetail(r.id);savedMessage('行动期限已保存');
+ }else if(c.type==='job'){
+  if(!c.id&&state.jobs.length>=3000)return formError('岗位库已达 3000 条，请先整理数据后再录入。');
+  if(!v('title')||!v('company')||!v('city')||!v('jd'))return formError('请填写岗位名称、公司、城市与 JD。');
+  const min=Number(v('salaryMin')),max=Number(v('salaryMax'));
+  if((max&&!min)||(max&&max<min))return formError('请填写薪资下限，并确保最高薪资不低于最低薪资。');
+  const url=v('url');if(url&&!safeURL(url))return formError('岗位链接需要是有效的 http 或 https 地址。');
+  const duplicate=state.jobs.find(j=>j.id!==c.id&&url&&safeURL(j.url)===safeURL(url)&&!j.demo);
+  if(duplicate)return formError(`这个链接已收录为「${duplicate.company} · ${duplicate.title}」，请直接编辑已有岗位。`);
+  const old=getJob(c.id),data={title:v('title'),company:v('company'),industry:v('industry'),city:v('city'),source:v('source'),hqRegion:v('hqRegion'),hqAddress:v('hqAddress'),url:url?safeURL(url):'',salaryMin:min,salaryMax:max||min,salaryUnit:v('salaryUnit'),days:Number(v('days'))||0,months:Number(v('months'))||0,tags:[...new Set(v('tags').split(/[,，、\n]/).map(t=>t.trim()).filter(Boolean))].slice(0,12),jd:v('jd'),updatedAt:now};
+  if(old){Object.assign(old,data);if(old.sync)old.sync.managed=false;}else state.jobs.unshift({id:uid('job'),createdAt:now,favorite:false,demo:false,logoTone:'green',...data});
+  closeEditor();commit();if(detailContext?.type==='job'&&old)openJobDetail(old.id);savedMessage('岗位档案已保存');
+ }else if(c.type==='app'){
+  if(!c.id&&state.applications.length>=3000)return formError('流程记录已达 3000 条，请先整理数据。');
+  const old=getApp(c.id),jobId=old?.jobId||v('jobId'),j=getJob(jobId);if(!j)return formError('请选择一个岗位。');
+  if(old?.events.length>=1000)return formError('这条流程已达 1000 次更新，请导出备份后整理。');
+  if(!old&&appForJob(jobId))return formError('这个岗位已有流程记录。请关闭窗口，在原记录中更新进度。');
+  const status=v('status'),eventAt=v('eventAt'),scheduledAt=PENDING.includes(status)?v('scheduledAt'):'';
+  if(!STATUSES.includes(status))return formError('请选择有效的流程状态。');
+  if(!validLocalDateTime(eventAt)||scheduledAt&&!validLocalDateTime(scheduledAt))return formError('请填写有效的日期与时间。');
+  if(scheduledAt&&scheduledAt<eventAt)return formError('笔试截止或面试时间不能早于收到本次通知的时间。');
+  if(!old&&v('appliedAt')>eventAt.slice(0,10))return formError('投递日期不能晚于第一条反馈日期。');
+  if(old&&eventAt<old.events[old.events.length-1].eventAt)return formError('新的进度不能早于上一条更新；请核对「收到通知 / 更新的时间」。');
+  const ev={id:uid('event'),status,round:v('round'),eventAt,scheduledAt,channel:v('channel'),notes:v('notes')};
+  if(old){Object.assign(old,{status,round:ev.round,scheduledAt,hrName:v('hrName'),updatedAt:now});old.events.push(ev);}else state.applications.unshift({id:uid('app'),jobId,appliedAt:v('appliedAt'),status,round:ev.round,scheduledAt,hrName:v('hrName'),events:[ev],jdSnapshot:structuredClone(j),demo:false,createdAt:now,updatedAt:now});
+  closeEditor();commit();if(detailContext?.type==='app'&&old)openAppDetail(old.id);else if(detailContext?.type==='job')openJobDetail(jobId);savedMessage('进度已加入时间线');
+ }else if(c.type==='review'){
+  if(!c.id&&state.reviews.length>=5000)return formError('复盘已达 5000 篇，请先整理数据。');
+  const old=getReview(c.id),jobId=old?.jobId||v('jobId'),j=getJob(jobId);if(!j)return formError('请选择本次复盘对应的岗位。');
+  const mode=event.submitter?.value==='completed'?'completed':'draft';
+  const lines=[...new Set(v('actions').split('\n').map(t=>t.trim()).filter(Boolean))];
+  if(lines.length>500)return formError('每篇复盘最多保存 500 个行动项，请合并相近的动作。');
+  if(mode==='completed'&&(!v('questions')||!v('gaps')||!lines.length))return formError('完成复盘前，请至少填写题目与追问、改进点，并添加一个可执行行动；也可以先保存草稿。');
+  const tasks=lines.map(text=>{const prior=old?.tasks.find(t=>t.text===text);return {text,done:prior?.done||false,dueDate:prior?.dueDate||''};});
+  const a=old?getApp(old.applicationId):(getApp(c.applicationId)?.jobId===jobId?getApp(c.applicationId):appForJob(jobId));
+  const data={jobId,applicationId:old?.applicationId||a?.id||'',jdSnapshot:old?.jdSnapshot||structuredClone(a?.jdSnapshot||j),kind:v('kind'),round:v('round'),date:v('date'),status:mode,context:v('context'),questions:v('questions'),strengths:v('strengths'),gaps:v('gaps'),asks:v('asks'),tasks,updatedAt:now};
+  if(old)Object.assign(old,data);else state.reviews.unshift({id:uid('review'),demo:false,createdAt:now,...data});
+  closeEditor();commit();if(detailContext?.type==='review'&&old)openReviewDetail(old.id);savedMessage(mode==='draft'?'复盘草稿已保存':'复盘已完成，记得回来勾选行动');
+ }
+}
+function exportData(){const blob=new Blob([JSON.stringify({...state,exportedAt:timestamp()},null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`拾程-数据备份-${today()}.json`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);toast('已生成备份文件');}
+function clearDemo(){
+ if(!confirm('清除演示岗位、演示流程与演示复盘？你亲自创建的记录和它们依赖的岗位会保留。'))return;
+ const previousApps=state.applications.slice();
+ state.applications=state.applications.filter(a=>!a.demo);state.reviews=state.reviews.filter(r=>!r.demo);
+ // A personal review may reference a demo application: retain that application and its JD.
+ const references=new Set(state.reviews.map(r=>r.applicationId).filter(Boolean));
+ references.forEach(id=>{if(!getApp(id)){const actual=previousApps.find(a=>a.id===id);if(actual)state.applications.push(actual);}});
+ const needed=new Set([...state.applications.map(a=>a.jobId),...state.reviews.map(r=>r.jobId)]);
+ state.jobs=state.jobs.filter(j=>!j.demo||needed.has(j.id));closeDetail();commit();toast('示例已清理；被个人记录引用的示例已保留');
+}
+document.addEventListener('click',event=>{
+ const nav=event.target.closest('[data-page]');if(nav){navigate(nav.dataset.page);return;}
+ const el=event.target.closest('[data-action]');if(!el)return;const {action,id,value}=el.dataset;
+ if(action==='close-editor')closeEditor();else if(action==='close-detail')closeDetail();
+ else if(action==='export')exportData();else if(action==='import')$('#import-input').click();else if(action==='help')openHelp();
+ else if(action==='sync-status')openSyncStatus();
+ else if(action==='source-directory')openRecruitmentDirectory();
+ else if(action==='preferences')openPreferences();
+ else if(action==='task-plan')openTaskPlan(id,Number(value));
+ else if(action==='review-event'){const a=getApp(id),e=a?.events.find(x=>x.id===value);if(e){openReviewForm(undefined,a.jobId,a.id);$('[name="round"]',$('#editor-form')).value=e.round;$('[name="date"]',$('#editor-form')).value=e.eventAt.slice(0,10);$('#review-kind').value=e.status==='笔试完成'?'笔试':e.status==='已拒绝'?'拒绝复盘':'业务面';updateReviewPrompts();}}
+ else if(action==='add-job')openJobForm();else if(action==='add-app')openAppForm();else if(action==='add-review')openReviewForm();
+ else if(action==='job-detail')openJobDetail(id);else if(action==='app-detail')openAppDetail(id);else if(action==='review-detail')openReviewDetail(id);
+ else if(action==='edit-job')openJobForm(id);else if(action==='new-job-app')openAppForm(undefined,id);else if(action==='update-app')openAppForm(id);
+ else if(action==='review-job')openReviewForm(undefined,id,appForJob(id)?.id);else if(action==='review-app'){const a=getApp(id);if(a)openReviewForm(undefined,a.jobId,a.id);}else if(action==='edit-review')openReviewForm(id);
+ else if(action==='favorite'){const j=getJob(id);if(!j)return;j.favorite=!j.favorite;commit();if(detailContext?.type==='job'&&detailContext.id===id)openJobDetail(id);}
+ else if(action==='reset-filters'){filters={keyword:'',industry:'',city:'',source:'',sourceType:'',hqRegion:'',salaryMin:'',salaryUnit:'day',negotiable:false,tab:'all',sort:'new'};render();}
+ else if(action==='job-tab'){filters.tab=value;render();}
+ else if(action==='app-filter'){appFilter.status=value;render();}else if(action==='review-filter'){reviewFilter.status=value;render();}
+ else if(action==='clear-demo')clearDemo();
+});
+$('#primary-action').addEventListener('click',()=>page==='overview'?openPreferences():page==='jobs'?openJobForm():page==='applications'?openAppForm():openReviewForm());
+$('#editor-form').addEventListener('submit',handleSubmit);
+document.addEventListener('input',event=>{
+ const el=event.target;if(el.dataset.filter&&el.type!=='checkbox'&&el.tagName!=='SELECT'){filters[el.dataset.filter]=el.value;renderJobResults();}
+ if(el.id==='app-search'){appFilter.keyword=el.value;renderAppResults();}
+ if(el.id==='review-search'){reviewFilter.keyword=el.value;renderReviewResults();}
+});
+document.addEventListener('change',event=>{
+ const el=event.target;
+ if(el.dataset.filter){filters[el.dataset.filter]=el.type==='checkbox'?el.checked:el.value;renderJobResults();}
+ if(el.id==='overview-examples'){overviewExamples=el.checked;render();}
+ if(el.id==='event-status')updateScheduleField();
+ if(el.id==='review-kind')updateReviewPrompts();
+ if(el.name==='jobId'&&editorContext?.type==='review'){editorContext.applicationId='';updateReviewContext();}
+ if(el.id==='review-kind-filter'){reviewFilter.kind=el.value;renderReviewResults();}
+ if(el.id==='review-pending'){reviewFilter.pending=el.checked;renderReviewResults();}
+ if(el.dataset.task!==undefined){const r=getReview(el.dataset.review),i=Number(el.dataset.task);if(r?.tasks[i]){r.tasks[i].done=el.checked;r.updatedAt=timestamp();commit();if(detailContext?.type==='review')openReviewDetail(r.id);}}
+});
+window.addEventListener('hashchange',()=>{const next=location.hash.slice(1);if(['overview','jobs','applications','reviews'].includes(next)&&page!==next){page=next;render();}});
+$('#editor').addEventListener('close',()=>{if(!$('#editor').open){editorContext=null;if(returnFocus?.isConnected)returnFocus.focus();}});
+$('#detail').addEventListener('close',()=>{if(!$('#detail').open){detailContext=null;if(returnFocus?.isConnected)returnFocus.focus();}});
+$('#import-input').addEventListener('change',async event=>{
+ const file=event.target.files[0];event.target.value='';if(!file)return;
+ if(file.size>5*1024*1024)return toast('备份文件不能超过 5 MB');
+ try{const imported=validateState(JSON.parse(await file.text()));if(!confirm(`导入 ${imported.jobs.length} 个岗位、${imported.applications.length} 条流程、${imported.reviews.length} 篇复盘，将替换当前数据。已导出当前备份后再继续。`))return;
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(imported));storageOK=true;$('#storage-warning').hidden=true;$('#save-state').textContent='数据保存在当前浏览器';}catch{storageOK=false;showStorageWarning();}state=imported;closeEditor();closeDetail();commit();savedMessage('备份数据已导入');}catch(error){toast('导入失败：'+(error.message||'文件格式不正确'));}
+});
+function validDate(v){if(typeof v!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(v))return false;const t=new Date(v+'T00:00:00Z');return Number.isFinite(t.getTime())&&t.toISOString().slice(0,10)===v;}
+function validLocalDateTime(v){return typeof v==='string'&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(v)&&validDate(v.slice(0,10))&&Number(v.slice(11,13))<24&&Number(v.slice(14,16))<60;}
+function validateState(data){
+ const fail=message=>{throw new Error(message);};
+ if(!data||data.version!==1||!Array.isArray(data.jobs)||!Array.isArray(data.applications)||!Array.isArray(data.reviews))fail('这不是拾程 v1 格式的备份');
+ if(data.jobs.length>3000||data.applications.length>3000||data.reviews.length>5000)fail('记录数量超过单份备份上限');
+ const str=(v,max=30000)=>typeof v==='string'&&v.length<=max;
+ const id=v=>str(v,120)&&/^[A-Za-z0-9_-]+$/.test(v);
+ const stamp=v=>str(v,50)&&Number.isFinite(new Date(v).getTime());
+ const number=(v,max)=>Number.isInteger(v)&&v>=0&&v<=max;
+ const unique=(rows,label)=>{const ids=new Set();rows.forEach(x=>{if(!x||!id(x.id)||ids.has(x.id))fail(label+' ID 无效或重复');ids.add(x.id);});return ids;};
+ const jobShape=j=>j&&id(j.id)&&str(j.company,100)&&j.company.trim()&&str(j.title,120)&&j.title.trim()&&str(j.industry,100)&&str(j.city,50)&&j.city.trim()&&SOURCES.includes(j.source)&&['中国','海外'].includes(j.hqRegion)&&str(j.hqAddress,200)&&str(j.jd)&&j.jd.trim()&&str(j.url,2000)&&(!j.url||safeURL(j.url))&&['day','month'].includes(j.salaryUnit)&&number(j.salaryMin,1000000)&&number(j.salaryMax,1000000)&&j.salaryMax>=j.salaryMin&&(!j.salaryMax||j.salaryMin)&&number(j.days,7)&&number(j.months,36)&&Array.isArray(j.tags)&&j.tags.length<=12&&j.tags.every(t=>str(t,300))&&typeof j.favorite==='boolean'&&typeof j.demo==='boolean'&&stamp(j.createdAt)&&stamp(j.updatedAt);
+ const pickJob=j=>({id:j.id,company:j.company,title:j.title,industry:j.industry,city:j.city,source:j.source,hqRegion:j.hqRegion,hqAddress:j.hqAddress,jd:j.jd,url:j.url,salaryUnit:j.salaryUnit,salaryMin:j.salaryMin,salaryMax:j.salaryMax,days:j.days,months:j.months,tags:j.tags.slice(),favorite:j.favorite,demo:j.demo,logoTone:['blue','purple','orange','green'].includes(j.logoTone)?j.logoTone:'green',createdAt:j.createdAt,updatedAt:j.updatedAt,...(j.sync?{sync:pickSync(j.sync)}:{})});
+ function pickSync(s){
+  if(!s||!id(s.sourceId)||!stamp(s.checkedAt)||!stamp(s.firstSeenAt)||!['open','unverified','closed'].includes(s.availability)||typeof s.managed!=='boolean'||!str(s.evidence,30000)||!safeURL(s.hqEvidenceUrl))fail('官网核验元数据无效');
+  return {sourceId:s.sourceId,checkedAt:s.checkedAt,firstSeenAt:s.firstSeenAt,availability:s.availability,managed:s.managed,evidence:s.evidence,hqEvidenceUrl:s.hqEvidenceUrl,qualificationEvidenceUrl:str(s.qualificationEvidenceUrl,2000)?s.qualificationEvidenceUrl:'',sourcePublishedAt:str(s.sourcePublishedAt,100)?s.sourcePublishedAt:''};
+ }
+ const jobIds=unique(data.jobs,'岗位'),appIds=unique(data.applications,'流程');unique(data.reviews,'复盘');
+ if(data.jobs.some(j=>!jobShape(j)))fail('岗位字段或 JD 格式不完整');
+ const seenJobApps=new Set();
+ const applications=data.applications.map(a=>{
+  if(!jobIds.has(a.jobId)||seenJobApps.has(a.jobId)||!jobShape(a.jdSnapshot)||a.jdSnapshot.id!==a.jobId||!validDate(a.appliedAt)||!STATUSES.includes(a.status)||!str(a.round,100)||!str(a.hrName,100)||!str(a.scheduledAt,16)||(a.scheduledAt&&!validLocalDateTime(a.scheduledAt))||typeof a.demo!=='boolean'||!stamp(a.createdAt)||!stamp(a.updatedAt)||!Array.isArray(a.events)||!a.events.length||a.events.length>1000)fail('流程记录格式、岗位关联或快照无效');
+  seenJobApps.add(a.jobId);unique(a.events,'流程事件');
+  if(a.events.some((ev,i)=>!STATUSES.includes(ev.status)||!str(ev.round,100)||!validLocalDateTime(ev.eventAt)||!str(ev.scheduledAt,16)||(ev.scheduledAt&&(!validLocalDateTime(ev.scheduledAt)||ev.scheduledAt<ev.eventAt))||!str(ev.channel,100)||!str(ev.notes,12000)||(i&&ev.eventAt<a.events[i-1].eventAt)))fail('流程时间线事件格式或顺序无效');
+  const last=a.events[a.events.length-1];if(a.status!==last.status||a.round!==last.round||a.scheduledAt!==last.scheduledAt||a.appliedAt>a.events[0].eventAt.slice(0,10)||(!PENDING.includes(a.status)&&a.scheduledAt))fail('流程当前状态与时间线不一致');
+  return {id:a.id,jobId:a.jobId,jdSnapshot:pickJob(a.jdSnapshot),appliedAt:a.appliedAt,status:a.status,round:a.round,hrName:a.hrName,scheduledAt:a.scheduledAt,demo:a.demo,createdAt:a.createdAt,updatedAt:a.updatedAt,events:a.events.map(ev=>({id:ev.id,status:ev.status,round:ev.round,eventAt:ev.eventAt,scheduledAt:ev.scheduledAt,channel:ev.channel,notes:ev.notes}))};
+ });
+ const reviews=data.reviews.map(r=>{
+  if(!jobIds.has(r.jobId)||!str(r.applicationId,120)||(r.applicationId&&(!appIds.has(r.applicationId)||data.applications.find(a=>a.id===r.applicationId).jobId!==r.jobId))||!jobShape(r.jdSnapshot)||r.jdSnapshot.id!==r.jobId||!KINDS.includes(r.kind)||!str(r.round,100)||!validDate(r.date)||!['draft','completed'].includes(r.status)||REVIEW_FIELDS.some(f=>!str(r[f],12000))||!Array.isArray(r.tasks)||r.tasks.length>500||r.tasks.some(t=>!t||!str(t.text,12000)||typeof t.done!=='boolean'||(t.dueDate!==undefined&&t.dueDate!==''&&!validDate(t.dueDate)))||r.tasks.reduce((sum,t)=>sum+t.text.length+1,0)>12001||typeof r.demo!=='boolean'||!stamp(r.createdAt)||!stamp(r.updatedAt))fail('复盘字段、行动项或岗位关联无效');
+  return {id:r.id,jobId:r.jobId,applicationId:r.applicationId,jdSnapshot:pickJob(r.jdSnapshot),kind:r.kind,round:r.round,date:r.date,status:r.status,context:r.context,questions:r.questions,strengths:r.strengths,gaps:r.gaps,asks:r.asks,tasks:r.tasks.map(t=>({text:t.text,done:t.done,dueDate:t.dueDate||''})),demo:r.demo,createdAt:r.createdAt,updatedAt:r.updatedAt};
+ });
+ return {version:1,jobs:data.jobs.map(pickJob),applications,reviews,preferences:window.SHICHENG_DECISIONS.preferences(data.preferences)};
+}
+applyDailyFeed(window.SHICHENG_DAILY_FEED);
+render();
+})();
+
+</script>
+</body>
+</html>
